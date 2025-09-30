@@ -1,86 +1,261 @@
-import { Phone, Mail, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import logo from "../assets/logo.png"
+import React, { useState } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram,
+  ChevronRight,
+  Globe,
+  Clock,
+  Award,
+  Users,
+  ArrowRight,
+  Send,
+  Check,
+  Star,
+} from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setTimeout(() => setSubscribed(false), 3000);
+      setEmail("");
+    }
+  };
+
+  const footerLinks = {
+    company: [
+      { name: "About Us", href: "#about", icon: Users },
+      { name: "Our Team", href: "#team", icon: Award },
+      { name: "Careers", href: "#careers", badge: "Hiring" },
+      { name: "Contact", href: "#contact", icon: Mail },
+      { name: "Blog", href: "#blog", badge: "New" },
+    ],
+    services: [
+      { name: "Accounting & Bookkeeping", href: "#" },
+      { name: "Payroll Services", href: "#" },
+      { name: "Tax Services", href: "#" },
+      { name: "Administrative Support", href: "#" },
+      { name: "Audit Support", href: "#" },
+      { name: "Outsourcing Services", href: "#" },
+    ],
+    hiring: [
+      { name: "EOR - Employee on Record", href: "#" },
+      { name: "Permanent Hiring", href: "#" },
+      { name: "Contract Staffing", href: "#" },
+      { name: "Executive Search (CXOs)", href: "#" },
+      { name: "Talent Acquisition", href: "#" },
+    ],
+    resources: [
+      { name: "Privacy Policy", href: "#" },
+      { name: "Terms of Service", href: "#" },
+      { name: "Cookie Policy", href: "#" },
+      { name: "Sitemap", href: "#" },
+      { name: "FAQs", href: "#" },
+    ],
+  };
+
+  const socialLinks = [
+    {
+      icon: Linkedin,
+      href: "#",
+      color: "from-blue-500 to-blue-600",
+      label: "LinkedIn",
+    },
+    {
+      icon: Twitter,
+      href: "#",
+      color: "from-sky-400 to-sky-500",
+      label: "Twitter",
+    },
+    {
+      icon: Facebook,
+      href: "#",
+      color: "from-blue-600 to-blue-700",
+      label: "Facebook",
+    },
+    {
+      icon: Instagram,
+      href: "#",
+      color: "from-pink-500 to-purple-600",
+      label: "Instagram",
+    },
+  ];
+
+  const stats = [
+    { number: "500+", label: "Happy Clients", icon: Users },
+    { number: "10+", label: "Years Experience", icon: Award },
+    { number: "50+", label: "Team Members", icon: Star },
+    { number: "24/7", label: "Support Available", icon: Clock },
+  ];
+
   return (
-    <footer className="relative bg-[#D14012]/10 text-white rounded-t-2xl max-w-[85rem] mx-auto p-8 overflow-hidden">
-      <div className="container mx-auto px-4 py-10 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <img src={logo} />
-            </div>
-            <p className="text-[#D14012] lg:text-lg leading-relaxed">
-              We are here to support you in every step of your accounting journey.
-            </p>
-            <div className="flex space-x-4">
-              <Button size="sm" className="bg-[#56b1b3]">
-                Contact Us Today
-              </Button>
-            </div>
-          </div>
+    <footer className="relative mt-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%239C92AC' fillOpacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+          }}
+        />
+        <motion.div
+          className="absolute top-0 left-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl"
+          animate={{ x: [0, 100, 0], y: [0, -50, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+          animate={{ x: [0, -100, 0], y: [0, 50, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
 
-          <div className="space-y-4">
-            <h3 className="text-lg text-secondary font-bold">Important Links</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Home</a>
-              <a href="#services" className="block text-[#D14012] hover:text-secondary transition-colors">Services</a>
-              <a href="#about" className="block text-[#D14012] hover:text-secondary transition-colors">About Us</a>
-              <a href="#team" className="block text-[#D14012] hover:text-secondary transition-colors">Our Team</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Privacy Policy</a>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg text-secondary font-bold">Services</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Accounting &<br />Bookkeeping</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Payroll Services</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Tax Services</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Administrative Support</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Audit Support</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Oursourcing Services</a>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-lg text-secondary font-bold">Hiring</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">EOR-Employee on Record</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Permenent Hiring</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Contract Staffing</a>
-              <a href="#" className="block text-[#D14012] hover:text-secondary transition-colors">Executive Search<br />(CXOs)</a>
-            </div>
-          </div>
-
-          <div className="space-y-4 mb-5">
-            <h3 className="text-lg text-secondary font-bold">Get in Touch</h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 mt-1 text-primary" />
-                <span className="text-[#D14012] hover:text-secondary">+91 9374437099</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 mt-1 text-primary" />
-                <span className="text-[#D14012] hover:text-secondary">accruvia@gmail.com</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 mt-1 text-primary" />
-                <span className="text-[#D14012] hover:text-secondary">Professional Services Nationwide</span>
-              </div>
-            </div>
+      <div className="relative z-10">
+        {/* Stats Bar */}
+        <div className="border-b border-gray-700/50 bg-gray-800/30 backdrop-blur-sm">
+          <div className="container mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, idx) => (
+              <motion.div
+                key={idx}
+                className="text-center cursor-pointer "
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, type: "spring" }}
+              >
+                <div className="flex justify-center mb-2">
+                  <stat.icon className="w-8 h-8 text-orange-500" />
+                </div>
+                <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                  {stat.number}
+                </h3>
+                <p className="text-gray-400 text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
 
-        {/* Copyright above curve */}
-      </div>
+        {/* Main Footer */}
+        <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          {/* Left block */}
+          <div className="lg:col-span-2 space-y-6">
+            <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+              AccRuvia
+            </h2>
+            <p className="text-sm text-gray-400">
+              Professional Excellence, Delivered
+            </p>
+            <p className="text-gray-300">
+              Empowering businesses with comprehensive accounting, bookkeeping,
+              and recruitment solutions.
+            </p>
 
-      {/* Red arc background */}
-      <div className="absolute bottom-0 left-0 w-full h-20 sm:h-16 mt-6 pt-5 pb-5 bg-[#D14012] rounded-t-[50%] sm:rounded-t-[100%] z-2">
-        <p className="text-white text-sm sm:text-lg text-center px-4">
-          © 2024 AccRuvia. All rights reserved. | Professional Accounting & Recruitment Solutions
-        </p>
+            {/* Newsletter */}
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg font-semibold"
+              >
+                {subscribed ? "✓ Subscribed" : "Subscribe"}
+              </button>
+            </form>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Services</h3>
+            <ul className="space-y-2 text-gray-400">
+              {footerLinks.services.map((s, i) => (
+                <li key={i} className="hover:text-orange-400 cursor-pointer ">
+                  {s.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Hiring */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Hiring Solutions</h3>
+            <ul className="space-y-2 text-gray-400">
+              {footerLinks.hiring.map((s, i) => (
+                <li key={i} className="hover:text-orange-400 cursor-pointer ">
+                  {s.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Company</h3>
+            <ul className="space-y-2 text-gray-400">
+              {footerLinks.company.map((c, i) => (
+                <li
+                  key={i}
+                  className="flex gap-2 items-center hover:text-orange-400 cursor-pointer "
+                >
+                  {c.name}
+                  {c.badge && (
+                    <span className="px-2 py-0.5 text-xs bg-orange-500/20 text-orange-400 rounded-full cursor-pointer ">
+                      {c.badge}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-bold text-lg mb-4">Get in Touch</h3>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <Phone className="w-4 h-4 text-orange-400" /> +91 9374437099
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <Mail className="w-4 h-4 text-orange-400" /> accruvia@gmail.com
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <MapPin className="w-4 h-4 text-orange-400" /> Services
+                Nationwide
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <Globe className="w-4 h-4 text-orange-400" />{" "}
+                <a
+                  href="https://www.accruvia.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  www.accruvia.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-gray-700/50 py-6 text-center text-gray-400 text-sm">
+          © {new Date().getFullYear()} AccRuvia. All rights reserved.
+        </div>
       </div>
     </footer>
   );

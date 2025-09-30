@@ -8,6 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    --cyan:181.3, 38.33%, 52.94%;
     --background: 0 0% 100%;
     --foreground: 210 15% 15%;
 
@@ -138,6 +139,7 @@ All colors MUST be HSL.
   /* Ensure proper scrolling */
   body {
     overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
   }
 
   /* Fallback smooth scroll */

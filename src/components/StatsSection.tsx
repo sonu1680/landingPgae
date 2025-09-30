@@ -106,16 +106,19 @@ const StatsSection = () => {
   };
 
   return (
-    <motion.section 
-      className="py-10 rounded-[25px] w-11/12 overflow-hidden" 
-      style={{ background:"linear-gradient(to right, #000000ff 0%, #af350f 50%, #000000ff 100%)" }}
+    <motion.section
+      className="py-10 rounded-[25px] w-11/12 overflow-hidden "
+      style={{
+        background:
+          "linear-gradient(to right, hsl(25, 95%, 20%) 0%, hsl(25, 95%, 53%) 50%, hsl(25, 95%, 20%) 100%)",
+      }}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.3 }}
     >
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           className="grid grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -123,21 +126,21 @@ const StatsSection = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           {stats.map((stat, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="text-center"
               variants={itemVariants}
-              whileHover={{ 
+              whileHover={{
                 y: -5,
-                transition: { duration: 0.2 }
+                transition: { duration: 0.2 },
               }}
             >
-              <CounterAnimation 
-                end={stat.number} 
+              <CounterAnimation
+                end={stat.number}
                 suffix={stat.suffix}
                 duration={2 + index * 0.2}
               />
-              <motion.div 
+              <motion.div
                 className="text-white/90 font-medium text-lg"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

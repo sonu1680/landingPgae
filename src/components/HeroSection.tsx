@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import heroIllustration from "@/assets/hero-illustration.jpg";
 import { motion } from "framer-motion";
+import { BackgroundLines } from "./ui/background-lines";
+import { GridBackgroundDemo } from "./GridBackground";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -82,156 +84,160 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-slate-50 to-blue-50 py-20">
-      <div className="container mx-auto px-4">
-        <motion.div 
-          className="grid lg:grid-cols-2 gap-12 items-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.div className="space-y-8" variants={itemVariants}>
-            <div className="space-y-6 text-center sm:text-left">
-              <motion.p 
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground"
-                variants={itemVariants}
-              >
-                Welcome to AccRuvia
-              </motion.p>
-              <motion.h1 
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug"
-                variants={itemVariants}
-              >
-                Your Trusted Partner for
-                <br />
-                all your <motion.span 
-                  className="text-primary"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Accounting &
-                </motion.span>
-                <br />
-                <motion.span 
-                  className="text-primary"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Recruitment Solutions
-                </motion.span>
-              </motion.h1>
-              <motion.p 
-                className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl"
-                variants={itemVariants}
-              >
-                Our vision is to set itself as a benchmark in Accounting and Outsourcing industry.
-                We help our clients achieve their business objectives by providing innovative,
-                best-in-class consulting services.
-              </motion.p>
-
-              <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start"
-                variants={buttonVariants}
-              >
-                <motion.div
-                  whileHover={{ 
-                    scale: 1.05,
-                    y: -2,
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ 
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 17
-                  }}
-                >
-                  <Button variant="brand-red" size="lg" className="text-base sm:text-lg font-bold px-6 sm:px-8 py-4 sm:py-6">
-                    Get Started
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ 
-                    scale: 1.05,
-                    y: -2,
-                    boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ 
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 17
-                  }}
-                >
-                  <Button
-                    size="lg"
-                    className="text-base sm:text-lg px-6 sm:px-8 font-bold py-4 sm:py-6 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors duration-300"
-                  >
-                    Explore Our Services
-                  </Button>
-                </motion.div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            className="relative"
-            variants={imageVariants}
+    <GridBackgroundDemo>
+      <section className=" py-20 ">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="grid lg:grid-cols-2 gap-12 items-center"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <motion.img
-              src={heroIllustration}
-              alt="AccRuvia - Professional accounting and recruitment services"
-              className="w-full h-auto background-color-transparent rounded-2xl shadow-xl"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            />
-            <motion.div 
-              className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"
-              animate={{ 
-                scale: [1, 1.3, 0.8, 1.2, 1],
-                opacity: [0.3, 0.7, 0.2, 0.6, 0.3],
-                x: [0, 10, -5, 8, 0],
-                y: [0, -5, 10, -3, 0],
-              }}
-              transition={{ 
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div 
-              className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/10 rounded-full blur-xl"
-              animate={{ 
-                scale: [1, 1.4, 0.7, 1.3, 1],
-                opacity: [0.2, 0.6, 0.1, 0.5, 0.2],
-                x: [0, -8, 12, -6, 0],
-                y: [0, 8, -10, 5, 0],
-              }}
-              transition={{ 
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-              }}
-            />
-            <motion.div 
-              className="absolute top-1/2 -right-8 w-16 h-16 bg-blue-400/20 rounded-full blur-lg"
-              animate={{ 
-                scale: [1, 1.5, 0.5, 1.2, 1],
-                opacity: [0.1, 0.4, 0.05, 0.3, 0.1],
-                rotate: [0, 180, 360],
-              }}
-              transition={{ 
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1.5
-              }}
-            />
+            <motion.div className="space-y-8" variants={itemVariants}>
+              <div className="space-y-6 text-center sm:text-left">
+                <motion.p
+                  className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground"
+                  variants={itemVariants}
+                >
+                  Welcome to AccRuvia
+                </motion.p>
+                <motion.h1
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-snug"
+                  variants={itemVariants}
+                >
+                  Your Trusted Partner for
+                  <br />
+                  all your{" "}
+                  <motion.span
+                    className="text-primary"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  ></motion.span>
+                  <br />
+                  <motion.span
+                    className="text-primary"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Recruitment Solutions
+                  </motion.span>
+                </motion.h1>
+                <motion.p
+                  className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl"
+                  variants={itemVariants}
+                >
+                  Our vision is to set itself as a benchmark in Accounting and
+                  Outsourcing industry. We help our clients achieve their
+                  business objectives by providing innovative, best-in-class
+                  consulting services.
+                </motion.p>
+
+                <motion.div
+                  className="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start"
+                  variants={buttonVariants}
+                >
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05,
+                      y: -2,
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 17,
+                    }}
+                  >
+                    <Button
+                      size="lg"
+                      className="text-primary border-2 border-primary hover:text-white sm:text-lg font-bold px-6 sm:px-8 py-4 sm:py-6  bg-transparent     hover:bg-primary "
+                    >
+                      Get Started
+                    </Button>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{
+                      scale: 1.05,
+                      y: -2,
+                      boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 17,
+                    }}
+                  >
+                    <a href="#services">
+                      <Button
+                        size="lg"
+                        className="text-base sm:text-lg px-6 sm:px-8 font-bold py-4 sm:py-6 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors duration-300"
+                      >
+                        Explore Our Services
+                      </Button>
+                    </a>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            <motion.div className="relative" variants={imageVariants}>
+              <motion.img
+                src={heroIllustration}
+                alt="AccRuvia - Professional accounting and recruitment services"
+                className="w-full h-auto background-color-transparent rounded-2xl shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              />
+              <motion.div
+                className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"
+                animate={{
+                  scale: [1, 1.3, 0.8, 1.2, 1],
+                  opacity: [0.3, 0.7, 0.2, 0.6, 0.3],
+                  x: [0, 10, -5, 8, 0],
+                  y: [0, -5, 10, -3, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/10 rounded-full blur-xl"
+                animate={{
+                  scale: [1, 1.4, 0.7, 1.3, 1],
+                  opacity: [0.2, 0.6, 0.1, 0.5, 0.2],
+                  x: [0, -8, 12, -6, 0],
+                  y: [0, 8, -10, 5, 0],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2,
+                }}
+              />
+              <motion.div
+                className="absolute top-1/2 -right-8 w-16 h-16 bg-blue-400/20 rounded-full blur-lg"
+                animate={{
+                  scale: [1, 1.5, 0.5, 1.2, 1],
+                  opacity: [0.1, 0.4, 0.05, 0.3, 0.1],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1.5,
+                }}
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </GridBackgroundDemo>
   );
 };
 

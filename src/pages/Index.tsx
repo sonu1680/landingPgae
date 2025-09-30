@@ -8,7 +8,10 @@ import SoftwareSection from "@/components/SoftwareSection";
 import TeamSection from "@/components/TeamSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; 
+import { BackgroundLinesDemo } from "@/components/BackgroundLinesDemo";
+import { BackgroundLines } from "@/components/ui/background-lines";
+import { StickyBanner } from "@/components/ui/sticky-banner";
 
 const Index = () => {
   const sectionVariants = {
@@ -42,21 +45,22 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-50 ">
       <main>
-        <Header />
-        
-        <motion.section 
+
+
+        <motion.section
           id="top"
           variants={heroVariants}
           initial="hidden"
           animate="visible"
         >
+
           <HeroSection />
         </motion.section>
 
-        <motion.section 
-          className="w-full flex justify-center"
+        <motion.section
+          className="w-full flex justify-center "
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -65,7 +69,7 @@ const Index = () => {
           <StatsSection />
         </motion.section>
 
-        <motion.section 
+        <motion.section
           id="services"
           variants={sectionVariants}
           initial="hidden"
@@ -84,7 +88,7 @@ const Index = () => {
           <RecruitmentSection />
         </motion.section>
 
-        <motion.section 
+        <motion.section
           id="about"
           variants={sectionVariants}
           initial="hidden"
@@ -103,7 +107,7 @@ const Index = () => {
           <SoftwareSection />
         </motion.section>
 
-        <motion.section 
+        <motion.section
           id="team"
           variants={sectionVariants}
           initial="hidden"

@@ -1,126 +1,111 @@
-import { Calculator, Users, FileText, Headphones, Search, UserCheck } from "lucide-react";
+import {
+  Calculator,
+  Users,
+  FileText,
+  Headphones,
+  Search,
+  UserCheck,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const ServicesSection = () => {
   const services = [
     {
       icon: Calculator,
       title: "Accounting & Bookkeeping",
-      description: "Stay focused on growth while we handle your accounting needs professionally and accurately.",
-      color: "bg-primary",
-      learnMore: true,
+      description:
+        "Stay focused on growth while we handle your accounting needs professionally and accurately. Our team ensures precise bookkeeping, regular financial reporting, and compliance checks so that you can concentrate on scaling your business without worrying about numbers.",
     },
     {
       icon: Users,
       title: "Payroll Services",
-      description: "Stay focused on growth while we handle your payroll needs professionally and accurately.",
-      color: "bg-secondary",
-      learnMore: true,
+      description:
+        "Stay focused on growth while we handle your payroll needs professionally and accurately.",
     },
     {
       icon: FileText,
       title: "Tax Services",
-      description: "Stay focused on growth while we handle your tax preparation and filing needs professionally.",
-      color: "bg-[#56b1b3]",
-      learnMore: true,
+      description:
+        "Stay focused on growth while we handle your tax preparation and filing needs professionally.",
     },
     {
       icon: Headphones,
       title: "Administrative Support",
-      description: "Stay focused on growth while we handle your administrative tasks professionally and efficiently.",
-      color: "bg-primary",
-      learnMore: true,
+      description:
+        "Stay focused on growth while we handle your administrative tasks professionally and efficiently.",
     },
     {
       icon: Search,
       title: "Audit Support",
-      description: "Stay focused on growth while we handle your audit support and compliance needs professionally.",
-      color: "bg-secondary",
-      learnMore: true,
+      description:
+        "Stay focused on growth while we handle your audit support and compliance needs professionally.",
     },
     {
       icon: UserCheck,
       title: "Outsourcing Services",
-      description: "Stay focused on growth while we handle your outsourcing and business process needs professionally.",
-      color: "bg-[#56b1b3]",
-      learnMore: true,
+      description:
+        "Stay focused on growth while we handle your outsourcing and business process needs professionally.",
     },
   ];
+
+  const [expanded, setExpanded] = useState<number | null>(null);
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.05,
-      },
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 },
     },
   };
 
-  const getCardVariants = (index: number) => ({
-    hidden: { 
-      opacity: 0, 
-      x: index % 2 === 0 ? -50 : 50, // Reduced distance for faster animation
-      y: 20,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  });
-
-  const headerVariants = {
-    hidden: { opacity: 0, y: -20 },
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section
+      id="services"
+      className="py-24 bg-gradient-to-br from-orange-50 via-white to-orange-100"
+    >
       <div className="container mx-auto px-4">
-        <motion.div 
+        {/* Header */}
+        <motion.div
           className="text-center mb-16"
-          variants={headerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <motion.p 
-            className="text-muted-foreground text-lg mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <span className="inline-block px-4 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-4">
             Explore Our Services
-          </motion.p>
-          <motion.h2 
-            className="text-4xl lg:text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Our <span className="text-orange-700">Professional Services</span>
-          </motion.h2>
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+            Our <span className="text-primary">Professional Services</span>
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive solutions tailored to support your business growth
+            with professionalism and precision.
+          </p>
         </motion.div>
 
-        <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        {/* Cards */}
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -128,120 +113,53 @@ const ServicesSection = () => {
         >
           {services.map((service, index) => {
             const Icon = service.icon;
+            const isExpanded = expanded === index;
+
             return (
               <motion.div
                 key={index}
-                variants={getCardVariants(index)}
-                whileHover={{ 
-                  y: -12,
-                  scale: 1.03,
-                  rotateY: index % 2 === 0 ? 2 : -2,
-                  transition: { 
-                    duration: 0.4,
-                    ease: [0.25, 0.46, 0.45, 0.94],
-                    type: "spring",
-                    stiffness: 300,
-                    damping: 20
-                  }
-                }}
-                style={{ perspective: "1000px" }}
+                variants={cardVariants}
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <Card className="group transition-all duration-500 border-0 shadow-md hover:bg-[#9e2f0d] hover:shadow-2xl h-full overflow-hidden relative">
-                  {/* Animated background gradient */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-br from-[#9e2f0d]/5 to-transparent opacity-0 group-hover:opacity-100"
-                    transition={{ duration: 0.3 }}
-                  />
-                  
-                  <CardHeader className="pb-4 relative z-10">
-                    <motion.div 
-                      className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-4 group-hover:bg-white transition-all duration-500 relative overflow-hidden`}
-                      whileHover={{ 
-                        scale: 1.1,
-                        rotate: 5,
-                        transition: { 
-                          duration: 0.3,
-                          type: "spring",
-                          stiffness: 400,
-                          damping: 15
-                        }
-                      }}
-                    >
-                      {/* Icon background animation */}
-                      <motion.div
-                        className="absolute inset-0 bg-white/20 rounded-2xl"
-                        initial={{ scale: 0, opacity: 0 }}
-                        whileHover={{ 
-                          scale: 1, 
-                          opacity: 1,
-                          transition: { duration: 0.2 }
-                        }}
-                      />
-                      <motion.div
-                        whileHover={{ 
-                          scale: 1.1,
-                          transition: { duration: 0.2 }
-                        }}
-                      >
-                        <Icon className="w-8 h-8 text-white group-hover:text-[#9e2f0d] relative z-10" />
-                      </motion.div>
-                    </motion.div>
-                    
-                    <motion.div
-                      whileHover={{ 
-                        x: 5,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
-                      <CardTitle className="text-xl font-bold text-secondary group-hover:text-white lg:text-2xl">
-                        {service.title}
-                      </CardTitle>
-                    </motion.div>
+                <Card
+                  onClick={() => setExpanded(isExpanded ? null : index)}
+                  className="cursor-pointer relative h-full border border-orange-100 bg-white/80 backdrop-blur-md shadow-md hover:shadow-xl transition-all duration-500 rounded-2xl overflow-hidden"
+                >
+                  {/* Icon */}
+                  <CardHeader className="pb-4 flex flex-col items-start">
+                    <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white shadow-md mb-4">
+                      <Icon className="w-7 h-7" />
+                    </div>
+                    <CardTitle className="text-xl font-bold">
+                      {service.title}
+                    </CardTitle>
                   </CardHeader>
-                  
-                  <CardContent className="space-y-4 relative z-10">
-                    <motion.div
-                      whileHover={{ 
-                        x: 3,
-                        transition: { duration: 0.2, delay: 0.1 }
+
+                  <CardContent className="space-y-6">
+                    <CardDescription
+                      className={`text-muted-foreground leading-relaxed transition-all duration-300 ${
+                        isExpanded ? "" : "line-clamp-3"
+                      }`}
+                    >
+                      {service.description}
+                    </CardDescription>
+
+                    <Button
+                      variant="ghost"
+                      className="group flex items-center gap-2 text-primary hover:text-orange-700 transition-all duration-300 font-semibold"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setExpanded(isExpanded ? null : index);
                       }}
                     >
-                      <CardDescription className="text-muted-foreground leading-relaxed group-hover:text-white lg:text-2xl">
-                        {service.description}
-                      </CardDescription>
-                    </motion.div>
-                    
-                    {service.learnMore && (
-                      <motion.div
-                        whileHover={{ 
-                          scale: 1.05,
-                          x: 5,
-                          transition: { 
-                            duration: 0.3,
-                            type: "spring",
-                            stiffness: 400,
-                            damping: 15
-                          }
-                        }}
-                        whileTap={{ 
-                          scale: 0.95,
-                          transition: { duration: 0.1 }
-                        }}
-                      >
-                        <Button className="w-full py-6 bg-[#56b1b3] flex justify-start items-center font-bold text-decoration-none underline-none lg:text-xl border border-transparent group-hover:border-white group-hover:bg-white/40 text-start transition-all duration-500 text-white relative overflow-hidden">
-                          {/* Button background animation */}
-                          <motion.div
-                            className="absolute inset-0 bg-white/10"
-                            initial={{ x: "-100%" }}
-                            whileHover={{ 
-                              x: "0%",
-                              transition: { duration: 0.3 }
-                            }}
-                          />
-                          <span className="relative z-10">Learn More {">>>"}</span>
-                        </Button>
-                      </motion.div>
-                    )}
+                      {isExpanded ? "Show Less" : "Learn More"}
+                      <ArrowRight
+                        className={`w-5 h-5 transition-transform ${
+                          isExpanded ? "rotate-90" : "group-hover:translate-x-1"
+                        }`}
+                      />
+                    </Button>
                   </CardContent>
                 </Card>
               </motion.div>

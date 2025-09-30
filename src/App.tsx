@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ContactUs from "./components/ContactUs";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
+import Header from "./components/Header";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Header />
+
         <SmoothScrollProvider>
           <Routes>
             <Route path="/" element={<Index />} />
