@@ -32,22 +32,22 @@ const RecruitmentSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center lg:text-left mb-12">
           <h2 className="text-4xl lg:text-5xl font-bold text-center">
-            Are You Looking for <br/><span className="text-primary">Recruitment Services</span> too?
+            Are You Looking for <br/><span className="text-orange-700">Recruitment Services</span> too?
           </h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-stretch">
-          <div className="flex flex-col justify-between space-y-6 flex-1">
+        <div className="flex flex-col lg:flex-row gap-12 items-stretch  ">
+          <div className="flex flex-col justify-between space-y-6 flex-1 ">
             {recruitmentServices.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="group transition-all duration-300 border-0 shadow-sm hover:bg-[#9e2f0d] hover:shadow-lg">
-                  <CardContent className="flex items-start gap-4 p-6">
-                    <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
-                      <Icon className="w-6 h-6 text-white group-hover:text-[#9e2f0d]" />
+                <Card key={index} className="group transition-all duration-300 border-0 shadow-sm hover:bg-[#9e2f0d] hover:shadow-lg hover:scale-105">
+                  <CardContent className="flex items-center gap-4 p-6">
+                    <div className="w-20 h-20 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                      <Icon className="w-10 h-10 text-white group-hover:text-[#9e2f0d]" />
                     </div>
-                    <div className="space-y-2">
-                      <CardTitle className="text-xl font-bold text-secondary group-hover:text-white">
+                    <div className="space-y-2 ">
+                      <CardTitle className="text-2xl font-bold  text-secondary group-hover:text-white text-orange-700">
                         {service.title}
                       </CardTitle>
                       <CardDescription className="text-muted-foreground lg:text-xl leading-relaxed group-hover:text-white">

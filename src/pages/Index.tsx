@@ -8,38 +8,129 @@ import SoftwareSection from "@/components/SoftwareSection";
 import TeamSection from "@/components/TeamSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 const Index = () => {
+  const sectionVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const heroVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="min-h-screen">
-      <Header />
       <main>
-        <section id="top">
+        <Header />
+        
+        <motion.section 
+          id="top"
+          variants={heroVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <HeroSection />
-        </section>
-        <section>
+        </motion.section>
+
+        <motion.section 
+          className="w-full flex justify-center"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <StatsSection />
-        </section>
-        <section id="services">
+        </motion.section>
+
+        <motion.section 
+          id="services"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <ServicesSection />
-        </section>
-        <section>
+        </motion.section>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <RecruitmentSection />
-        </section>
-        <section id="about">
+        </motion.section>
+
+        <motion.section 
+          id="about"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <AboutSection />
-        </section>
-        <section>
+        </motion.section>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <SoftwareSection />
-        </section>
-        <section id="team">
+        </motion.section>
+
+        <motion.section 
+          id="team"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <TeamSection />
-        </section>
-        <section>
+        </motion.section>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           <CallToActionSection />
-        </section>
+        </motion.section>
       </main>
-      <Footer />
+
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <Footer />
+      </motion.div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { Linkedin, Facebook, Twitter } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 const TeamSection = () => {
   const teamMembers = [
@@ -23,56 +24,242 @@ const TeamSection = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 80,
+      scale: 0.8,
+      rotateX: -20,
+      filter: "blur(10px)",
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateX: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 1,
+        ease: [0.25, 0.46, 0.45, 0.94],
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+      },
+    },
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const socialVariants = {
+    hidden: { opacity: 0, scale: 0, rotateY: -90 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      rotateY: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+        type: "spring",
+        stiffness: 200,
+        damping: 15,
+      },
+    },
+  };
+
   return (
     <section id="team" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <p className="text-lg mb-4">Our Team</p>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+        <motion.div 
+          className="text-center mb-16"
+          variants={headerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.p 
+            className="text-lg mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Our Team
+          </motion.p>
+          <motion.h2 
+            className="text-4xl lg:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             Our <span className="text-primary">Management Team</span>
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {teamMembers.map((member, index) => (
-            <Card key={index}   className="group hover:shadow-xl transition-all duration-300 shadow-md overflow-hidden border-[4px] border-red-500">
-              <div className="relative">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              <CardContent className="p-6 space-y-4">
-                <div className="text-center">
-                  <h3 className="text-xl font-bold text-secondary mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-primary font-semibold mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {member.description}
-                  </p>
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover={{ 
+                y: -15,
+                scale: 1.03,
+                rotateY: 5,
+                rotateX: 5,
+                transition: { 
+                  duration: 0.4,
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20
+                }
+              }}
+              style={{ perspective: "1000px" }}
+            >
+              <Card className="group hover:shadow-2xl transition-all duration-300 shadow-lg overflow-hidden border border-gray-200 h-full">
+                <div className="relative overflow-hidden">
+                  <motion.img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-64 object-cover"
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotateY: 10,
+                    }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    style={{ transformStyle: "preserve-3d" }}
+                  />
+                  <motion.div 
+                    className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </div>
+                
+                <CardContent className="p-6 space-y-4">
+                  <motion.div 
+                    className="text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <motion.h3 
+                      className="text-xl font-bold text-secondary mb-2"
+                      whileHover={{ 
+                        scale: 1.05,
+                        color: "#ef4444",
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      {member.name}
+                    </motion.h3>
+                    <motion.p 
+                      className="text-primary font-semibold mb-4"
+                      whileHover={{ 
+                        scale: 1.05,
+                        transition: { duration: 0.2 }
+                      }}
+                    >
+                      {member.role}
+                    </motion.p>
+                    <p className="text-muted-foreground leading-relaxed mb-6">
+                      {member.description}
+                    </p>
+                  </motion.div>
 
-                <div className="flex justify-center space-x-4">
-                  <a href="#" className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a href="#" className="p-2 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors">
-                    <Facebook className="w-4 h-4" />
-                  </a>
-                  <a href="#" className="p-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors">
-                    <Twitter className="w-4 h-4" />
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+                  <motion.div 
+                    className="flex justify-center space-x-4"
+                    variants={socialVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <motion.a 
+                      href="#" 
+                      className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotateY: 15,
+                        boxShadow: "0 8px 25px rgba(37, 99, 235, 0.4)",
+                      }}
+                      whileTap={{ scale: 0.9 }}
+                      transition={{ 
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 17
+                      }}
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </motion.a>
+                    <motion.a 
+                      href="#" 
+                      className="p-3 bg-blue-800 text-white rounded-lg hover:bg-blue-900 transition-colors"
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotateY: -15,
+                        boxShadow: "0 8px 25px rgba(30, 64, 175, 0.4)",
+                      }}
+                      whileTap={{ scale: 0.9 }}
+                      transition={{ 
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 17
+                      }}
+                    >
+                      <Facebook className="w-4 h-4" />
+                    </motion.a>
+                    <motion.a 
+                      href="#" 
+                      className="p-3 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors"
+                      whileHover={{ 
+                        scale: 1.2,
+                        rotateY: 15,
+                        boxShadow: "0 8px 25px rgba(14, 165, 233, 0.4)",
+                      }}
+                      whileTap={{ scale: 0.9 }}
+                      transition={{ 
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 17
+                      }}
+                    >
+                      <Twitter className="w-4 h-4" />
+                    </motion.a>
+                  </motion.div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

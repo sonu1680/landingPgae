@@ -116,4 +116,34 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Smooth scrolling optimization */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Lenis smooth scroll optimization */
+  html.lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  /* Ensure proper scrolling */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Fallback smooth scroll */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
 }
