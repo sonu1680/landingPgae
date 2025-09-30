@@ -22,7 +22,7 @@ All colors MUST be HSL.
     --primary: 25 95% 53%; /* Brand Orange */
     --primary-foreground: 0 0% 100%;
     --primary-hover: 25 95% 48%;
-    
+
     --secondary: 220 30% 18%; /* Navy Blue */
     --secondary-foreground: 0 0% 100%;
     --secondary-hover: 220 30% 25%;
@@ -30,7 +30,7 @@ All colors MUST be HSL.
     --accent: 172 100% 50%; /* Teal */
     --accent-foreground: 0 0% 100%;
     --accent-hover: 172 100% 45%;
-    
+
     /* Additional Brand Colors */
     --brand-red: 14 100% 57%; /* Red for Get Started button */
     --brand-orange: 25 95% 53%; /* Orange for secondary buttons */
@@ -107,6 +107,10 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+  .theme {
+    --animate-marquee:marquee var(--duration) infinite linear;
+    --animate-marquee-vertical:marquee-vertical var(--duration) linear infinite;
+  }
 }
 
 @layer base {
@@ -146,6 +150,28 @@ All colors MUST be HSL.
   @media (prefers-reduced-motion: no-preference) {
     html {
       scroll-behavior: smooth;
+    }
+  }
+}
+
+/* ---break---
+*/
+
+@theme inline {
+  @keyframes marquee {
+  from {
+    transform:translateX(0);
+    }
+  to {
+    transform:translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform:translateY(0);
+    }
+  to {
+    transform:translateY(calc(-100% - var(--gap)));
     }
   }
 }

@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import StatsSection from "@/components/StatsSection";
 import ServicesSection from "@/components/ServicesSection";
@@ -8,15 +7,13 @@ import SoftwareSection from "@/components/SoftwareSection";
 import TeamSection from "@/components/TeamSection";
 import CallToActionSection from "@/components/CallToActionSection";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion"; 
-import { BackgroundLinesDemo } from "@/components/BackgroundLinesDemo";
-import { BackgroundLines } from "@/components/ui/background-lines";
-import { StickyBanner } from "@/components/ui/sticky-banner";
+import { motion } from "framer-motion";
+
 
 const Index = () => {
   const sectionVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 30,
     },
     visible: {
@@ -30,8 +27,8 @@ const Index = () => {
   };
 
   const heroVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 40,
     },
     visible: {
@@ -45,17 +42,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-50 ">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 ">
       <main>
-
-
         <motion.section
           id="top"
           variants={heroVariants}
           initial="hidden"
           animate="visible"
         >
-
           <HeroSection />
         </motion.section>
 

@@ -37,8 +37,8 @@ const StatsSection = () => {
   };
 
   const itemVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 30,
       scale: 0.8,
     },
@@ -53,7 +53,15 @@ const StatsSection = () => {
     },
   };
 
-  const CounterAnimation = ({ end, suffix, duration = 2 }: { end: number; suffix: string; duration?: number }) => {
+  const CounterAnimation = ({
+    end,
+    suffix,
+    duration = 2,
+  }: {
+    end: number;
+    suffix: string;
+    duration?: number;
+  }) => {
     const [count, setCount] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -81,10 +89,13 @@ const StatsSection = () => {
       let startTime: number;
       const animate = (currentTime: number) => {
         if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-        
+        const progress = Math.min(
+          (currentTime - startTime) / (duration * 1000),
+          1
+        );
+
         setCount(Math.floor(progress * end));
-        
+
         if (progress < 1) {
           requestAnimationFrame(animate);
         }
@@ -100,7 +111,8 @@ const StatsSection = () => {
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.2 }}
       >
-        {count}{suffix}
+        {count}
+        {suffix}
       </motion.div>
     );
   };
@@ -135,6 +147,9 @@ const StatsSection = () => {
                 transition: { duration: 0.2 },
               }}
             >
+              <div
+                className={`w-1 h-20 absolute bg-transparent ${index==0?"lg:bg-transparent":"lg:bg-white "}  rounded-sm animate-none `}
+              ></div>
               <CounterAnimation
                 end={stat.number}
                 suffix={stat.suffix}

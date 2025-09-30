@@ -7,15 +7,15 @@ const CallToActionSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-2 relative">
+    <section className="py-10 relative">
       <div className="container mx-auto px-4">
         <div className="relative bg-gradient-to-r from-[#3b1d16] to-[#ed2f0d] rounded-2xl p-10 lg:pl-40 overflow-visible">
           {/* Laptop Image */}
           <motion.div
             initial={{ y: 0 }}
-            animate={{ y: [0, -20, 0] }}
+            animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className=" hidden lg:block absolute -left-10 -top-52  w-[650px] drop-shadow-2xl "
+            className=" hidden lg:block absolute -left-10 -top-48  w-[650px] drop-shadow-2xl "
           >
             <img src={laptopImage} alt="Laptop" className="" />
           </motion.div>

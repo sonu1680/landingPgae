@@ -18,7 +18,7 @@ import {
   Star,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import logo from "@/assets/logo.png"
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
@@ -122,38 +122,15 @@ const Footer = () => {
         />
       </div>
 
-      <div className="relative z-10">
-        {/* Stats Bar */}
-        <div className="border-b border-gray-700/50 bg-gray-800/30 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, idx) => (
-              <motion.div
-                key={idx}
-                className="text-center cursor-pointer "
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, type: "spring" }}
-              >
-                <div className="flex justify-center mb-2">
-                  <stat.icon className="w-8 h-8 text-orange-500" />
-                </div>
-                <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-                  {stat.number}
-                </h3>
-                <p className="text-gray-400 text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
+      <div className="relative z-10  border-gray-700/50 bg-gray-800/30 backdrop-blur-sm">
         {/* Main Footer */}
-        <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8  border-gray-700/50 bg-gray-800/30 backdrop-blur-sm">
           {/* Left block */}
           <div className="lg:col-span-2 space-y-6">
-            <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-              AccRuvia
-            </h2>
+            <div className="text-3xl  font-bold bg-clip-text text-transparent  ">
+              d
+              <img src={logo} alt="" className="bg-white rounded-lg px-2" />
+            </div>
             <p className="text-sm text-gray-400">
               Professional Excellence, Delivered
             </p>
@@ -253,7 +230,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-gray-700/50 py-6 text-center text-gray-400 text-sm">
+        <div className="border-t  border-gray-700/50 bg-gray-800/30 backdrop-blur-sm py-6 text-center text-gray-400 text-sm">
           © {new Date().getFullYear()} AccRuvia. All rights reserved.
         </div>
       </div>

@@ -37,7 +37,7 @@ const RecruitmentSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden">
+    <section className="py-10 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden">
       {/* Accent circles */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-orange-200/40 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-orange-300/30 rounded-full blur-3xl"></div>
@@ -72,7 +72,7 @@ const RecruitmentSection = () => {
                 >
                   <Card className="group relative overflow-hidden border border-orange-100 bg-white/80 backdrop-blur-md shadow-md rounded-2xl hover:shadow-xl transition-all duration-500 cursor-pointer">
                     <CardContent className="flex items-center gap-6 p-6">
-                      <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#9e2f0d] to-orange-600 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 flex items-center justify-center rounded-xl  bg-primary text-white shadow-lg group-hover:scale-110 transition-transform duration-300 px-4">
                         <Icon className="w-8 h-8" />
                       </div>
                       <div className="space-y-2">

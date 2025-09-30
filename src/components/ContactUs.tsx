@@ -2,14 +2,12 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import Header from "./Header";
 import Footer from "./Footer";
 import heroIllustration from "@/assets/hero-illustration.jpg";
-import { GridBackgroundDemo } from "./GridBackground";
 
 const ContactUs = () => {
   return (
     <div className="w-full overflow-x-hidden  bg-gradient-to-br from-orange-50 to-orange-50 text-gray-900">
 
       {/* Hero Section */}
-      <GridBackgroundDemo>
         <section className="relative  py-20 ">
           {/* Accent blobs */}
           <div className="absolute top-10 left-10 w-40 h-40 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
@@ -21,7 +19,7 @@ const ContactUs = () => {
               <div className="space-y-8 text-center lg:text-left">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-[#0F172A]">
                   Let’s Connect for a{" "}
-                  <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  <span className=" bg-clip-text text-primary ">
                     Free Consultation
                   </span>
                 </h1>
@@ -53,7 +51,6 @@ const ContactUs = () => {
             </div>
           </div>
         </section>
-      </GridBackgroundDemo>
 
       {/* Contact Info + Form */}
       <section

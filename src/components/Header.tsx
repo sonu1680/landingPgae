@@ -12,7 +12,7 @@ const Header = () => {
     <>
       {/* Top Contact Bar */}
 
-      <div className="w-full flex  bg-gradient-to-br from-orange-50 to-orange-50  justify-center">
+      {/* <div className="w-full flex  bg-gradient-to-br from-orange-50 to-orange-50  justify-center">
         <div
           className="bg-gradient-to-r from-[#ed2f0d] to-[#282b4e] text-white   py-2 rounded-b-2xl
          max-w-[86rem] w-full"
@@ -36,7 +36,7 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navigation */}
       <StickyBanner>
@@ -44,7 +44,7 @@ const Header = () => {
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
-              <div className="flex items-center">
+              <div className="flex items-center" onClick={()=>navigate("/")} >
                 <div className="flex items-center gap-2">
                   <div className="w-[240px] h-8 flex items-center justify-center">
                     <img src={logo}></img>

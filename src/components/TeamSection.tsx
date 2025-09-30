@@ -180,7 +180,7 @@ const TeamSection = () => {
             transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
           >
             <Users className="w-5 h-5 text-orange-500" />
-            <span className="text-sm font-semibold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-sm font-semibold bg-primary  bg-clip-text text-transparent">
               MEET THE EXPERTS
             </span>
           </motion.div>
@@ -193,7 +193,7 @@ const TeamSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             Our{" "}
-            <span className="bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-primary  bg-clip-text text-transparent">
               Leadership
             </span>{" "}
             Team
@@ -364,14 +364,7 @@ const TeamSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <motion.button
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-orange-500 to-purple-600 text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Meet Our Full Team
-            <ChevronRight className="w-5 h-5" />
-          </motion.button>
+         
         </motion.div>
       </div>
     </section>
