@@ -136,7 +136,7 @@ const TeamSection = () => {
   };
 
   return (
-    <section className="relative py-24  overflow-hidden">
+    <section className="relative py-2  overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-200/20 to-purple-200/20 rounded-full blur-3xl"

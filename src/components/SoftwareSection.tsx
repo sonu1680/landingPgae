@@ -18,7 +18,7 @@ const SoftwareSection = () => {
   const loopedSoftware = [...software, ...software];
 
   return (
-    <section className="py-16 ">
+    <section className="py-2 ">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl lg:text-5xl font-bold mb-12">
           Our <span className="text-primary">Software Expertise</span>
