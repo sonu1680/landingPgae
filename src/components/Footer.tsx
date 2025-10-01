@@ -128,7 +128,7 @@ const Footer = () => {
           {/* Left block */}
           <div className="lg:col-span-2 space-y-6">
             <div className="text-3xl  font-bold bg-clip-text text-transparent  ">
-              d
+              
               <img src={logo} alt="" className="bg-white rounded-lg px-2" />
             </div>
             <p className="text-sm text-gray-400">

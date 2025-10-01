@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound";
 import ContactUs from "./components/ContactUs";
 import SmoothScrollProvider from "./components/SmoothScrollProvider";
 import Header from "./components/Header";
+import ServicePage from "./components/Services";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -23,10 +25,12 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/contact-us" element={<ContactUs />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/services" element={<ServicePage />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </SmoothScrollProvider>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

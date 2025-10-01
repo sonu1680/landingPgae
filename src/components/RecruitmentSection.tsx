@@ -76,7 +76,7 @@ const RecruitmentSection = () => {
                         <Icon className="w-8 h-8" />
                       </div>
                       <div className="space-y-2">
-                        <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-[#9e2f0d]">
+                        <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-primary">
                           {service.title}
                         </CardTitle>
                         <CardDescription className="text-gray-600 leading-relaxed group-hover:text-gray-700">

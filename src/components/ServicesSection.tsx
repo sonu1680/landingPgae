@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ServicesSection = () => {
   const services = [
@@ -109,9 +110,9 @@ const ServicesSection = () => {
       },
     },
   };
-
+const navigate=useNavigate()
   return (
-    <section id="services" className="py-10 lg:py-20 ">
+    <section id="services" className="py-10 lg:py-20  ">
       <div className="container mx-auto px-4">
         <motion.div
           className="text-center lg:mb-16  "
@@ -209,8 +210,9 @@ const ServicesSection = () => {
                         x: 5,
                         transition: { duration: 0.2 },
                       }}
+                      className="group-hover:text-white transition-all duration-300"
                     >
-                      <CardTitle className="text-xl font-bold">
+                      <CardTitle className="text-xl font-bold  ">
                         {service.title}
                       </CardTitle>
                     </motion.div>
@@ -219,12 +221,14 @@ const ServicesSection = () => {
                   <CardContent className="space-y-4 relative z-10">
                     <motion.div
                       whileHover={{
-                        x: 3,
+                        x: 1,
                         transition: { duration: 0.2, delay: 0.1 },
                       }}
                     >
-                      <CardDescription  className={`text-muted-foreground leading-relaxed transition-all duration-300 
-                      }`}>
+                      <CardDescription
+                        className={`group-hover:text-white leading-relaxed transition-all duration-300 
+                      }`}
+                      >
                         {service.description}
                       </CardDescription>
                     </motion.div>
@@ -233,7 +237,7 @@ const ServicesSection = () => {
                       <motion.div
                         whileHover={{
                           scale: 1.05,
-                          x: 5,
+                          x: 1,
                           transition: {
                             duration: 0.3,
                             type: "spring",
@@ -246,7 +250,10 @@ const ServicesSection = () => {
                           transition: { duration: 0.1 },
                         }}
                       >
-                        <Button className="w-full py-6 bg-[#56b1b3] flex justify-start items-center font-bold text-decoration-none underline-none lg:text-xl border border-transparent group-hover:border-white group-hover:bg-white/40 text-start transition-all duration-500 text-white relative overflow-hidden">
+                        <Button
+                          className="w-full py-6 bg-cyan flex justify-start items-center font-bold text-decoration-none underline-none lg:text-xl border border-transparent group-hover:border-white group-hover:bg-white/40 text-start transition-all duration-500 text-white relative overflow-hidden"
+                          onClick={() => navigate("/services")}
+                        >
                           {/* Button background animation */}
                           <motion.div
                             className="absolute inset-0 bg-white/10"
@@ -257,7 +264,7 @@ const ServicesSection = () => {
                             }}
                           />
                           <span className="relative z-10">
-                            Learn More {">>>"}
+                             Learn More {">>>"}
                           </span>
                         </Button>
                       </motion.div>

@@ -93,7 +93,7 @@ const Header = () => {
               </nav>
 
               {/* Mobile Menu Button */}
-              <button className="md:hidden">
+              {/* <button className="md:hidden">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -107,7 +107,7 @@ const Header = () => {
                     d="M4 6h16M4 12h16M4 18h16"
                   />
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
         </header>
