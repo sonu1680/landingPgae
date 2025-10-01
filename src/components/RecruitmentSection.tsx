@@ -37,7 +37,7 @@ const RecruitmentSection = () => {
   ];
 
   return (
-    <section className="py-10 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden">
+    <section className=" py-6 lg:py-10 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden">
       {/* Accent circles */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-orange-200/40 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-orange-300/30 rounded-full blur-3xl"></div>
@@ -45,7 +45,7 @@ const RecruitmentSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Heading */}
         <motion.div
-          className="text-center lg:text-left mb-16"
+          className="text-center lg:text-left mb-8 lg:mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -13,7 +13,6 @@ const AboutSection = () => {
         setContentHeight(height);
       }
     }
-
     updateHeight();
     window.addEventListener("resize", updateHeight);
     return () => window.removeEventListener("resize", updateHeight);
@@ -22,55 +21,48 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-24 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden"
+      className="py-10 lg:py-20 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden"
     >
-      {/* Decorative background accents */}
-      <div className="absolute top-20 left-10 w-40 h-40 bg-orange-200/30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 right-10 w-56 h-56 bg-orange-300/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-10 left-5 w-32 h-32 sm:w-40 sm:h-40 bg-orange-200/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-5 w-40 h-40 sm:w-56 sm:h-56 bg-orange-300/20 rounded-full blur-3xl"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
-          {/* Illustration */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 lg:gap-16">
           <motion.div
             className="relative order-2 lg:order-1 w-full lg:w-1/2"
-            style={{ height: contentHeight ? `${contentHeight}px` : "auto" }}
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl shadow-xl w-full h-full">
               <img
                 src={aboutIllustration}
                 alt="About AccRuvia - Professional team collaboration"
                 className="w-full h-full object-cover"
               />
-              {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/5"></div>
             </div>
           </motion.div>
 
-          {/* Content */}
           <motion.div
             ref={contentRef}
-            className="w-full lg:w-1/2 order-1 lg:order-2 space-y-8"
+            className="w-full lg:w-1/2 order-1 lg:order-2 space-y-6 sm:space-y-8"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            {/* Header */}
             <div className="text-center lg:text-left">
-              <span className="inline-block px-4 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-4">
+              <span className="inline-block px-3 sm:px-4 py-1 text-xs sm:text-sm font-semibold text-primary bg-primary/10 rounded-full mb-3 sm:mb-4">
                 Our Information
               </span>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                 About <span className="text-primary">Us</span>
               </h2>
             </div>
 
-            {/* Paragraphs */}
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
               <p>
                 <span className="font-semibold text-primary">LN Associate</span>
                 , established in March 2016, is a one-stop consultancy firm

@@ -84,7 +84,7 @@ const ServicesSection = () => {
   const getCardVariants = (index: number) => ({
     hidden: {
       opacity: 0,
-      x: index % 2 === 0 ? -50 : 50, // Reduced distance for faster animation
+      x: index % 2 === 0 ? -50 : 50, 
       y: 20,
     },
     visible: {
@@ -111,10 +111,10 @@ const ServicesSection = () => {
   };
 
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-10 lg:py-20 ">
       <div className="container mx-auto px-4">
         <motion.div
-          className="text-center mb-16"
+          className="text-center lg:mb-16  "
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"

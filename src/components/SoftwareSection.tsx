@@ -16,38 +16,46 @@ const SoftwareSection = () => {
   ];
 
   return (
-    <section className="py-16 ">
-      <div className="container py-8   w-full bg-white shadow-lg shadow-gray-300 flex flex-row justify-around rounded-lg  items-center   ">
-        <div className="text-center w-1/2 ">
-          <h2 className="text-3xl lg:text-5xl font-bold">
-            Our <span className="text-primary">Software Expertise</span>
-          </h2>
-        </div>
-        <div className="w-2 h-20 bg-primary/70 rounded-lg "></div>
-        <div className="flex w-1/2 flex-wrap justify-center items-center gap-12 px-10 rounded-xl overflow-hidden">
-  <Marquee
-    gradient={true}         
-    gradientWidth={80}      
-    speed={50} 
-    pauseOnHover={true} 
-    loop={0} 
-    className="flex items-center"
-  >
-    {software.map((item, index) => (
-      <div
-        key={index}
-        className="group flex flex-col items-center mx-8 transition-transform duration-300 hover:scale-110"
-      >
-        <img
-          src={item.logo}
-          alt={`${item.name} logo`}
-          className="w-16 h-16 object-contain"
-        />
-      </div>
-    ))}
-  </Marquee>
-</div>
+    <section className="py-12 sm:py-16">
+      <div className="container mx-auto px-4">
+        <div className="bg-white shadow-lg shadow-gray-300 rounded-lg flex flex-col lg:flex-row items-center lg:justify-between gap-8 lg:gap-12 py-8 px-6">
+          {/* Heading */}
+          <div className="text-center lg:text-left lg:w-1/2">
+            <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold leading-snug">
+              Our <span className="text-primary">Software Expertise</span>
+            </h2>
+          </div>
 
+          {/* Divider (hidden on small) */}
+          <div className="hidden lg:block w-1 h-24 bg-primary/70 rounded-lg"></div>
+
+          {/* Logos Marquee */}
+          <div className="w-full lg:w-1/2 flex justify-center items-center">
+            <div className="w-full overflow-hidden px-2 sm:px-6">
+              <Marquee
+                gradient={true}
+                gradientWidth={50}
+                speed={50}
+                pauseOnHover={true}
+                loop={0}
+                className="flex items-center"
+              >
+                {software.map((item, index) => (
+                  <div
+                    key={index}
+                    className="group flex flex-col items-center mx-6 sm:mx-8 transition-transform duration-300 hover:scale-110"
+                  >
+                    <img
+                      src={item.logo}
+                      alt={`${item.name} logo`}
+                      className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
+                    />
+                  </div>
+                ))}
+              </Marquee>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
