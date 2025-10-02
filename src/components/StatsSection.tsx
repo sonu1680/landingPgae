@@ -4,17 +4,17 @@ import { useEffect, useState } from "react";
 const StatsSection = () => {
   const stats = [
     {
-      number: 10,
+      number: 5,
       suffix: "+",
       label: "Years of Experience",
     },
     {
-      number: 20,
+      number: 15,
       suffix: "+",
       label: "Industry Served",
     },
     {
-      number: 500,
+      number: 200,
       suffix: "+",
       label: "Satisfied Clients",
     },

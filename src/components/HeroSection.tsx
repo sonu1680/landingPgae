@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroIllustration from "@/assets/hero-illustration.jpg";
+import heroIllustration from "@/assets/image.svg";
 import { motion } from "framer-motion";
 import { BackgroundLines } from "./ui/background-lines";
 import { GridBackgroundDemo } from "./GridBackground";
@@ -126,10 +126,11 @@ const navigate=useNavigate()
                 className="text-sm sm:text-base md:text-lg  leading-relaxed max-w-2xl"
                 variants={itemVariants}
               >
-                Our vision is to set itself as a benchmark in Accounting and
-                Outsourcing industry. We help our clients achieve their business
-                objectives by providing innovative, best-in-class consulting
-                services.
+                At AccRuvia, we helps businesses run better by managing the
+                financial and administrative tasks that often slow them
+                down—accounting, payroll, tax, and support services. With
+                operations across India and Dubai, we provide reliable support
+                so you can focus on growth.
               </motion.p>
 
               <motion.div
@@ -183,16 +184,16 @@ const navigate=useNavigate()
             </div>
           </motion.div>
 
-          <motion.div className="relative" variants={imageVariants}>
+          <motion.div className="relative " variants={imageVariants}>
             <motion.img
               src={heroIllustration}
               alt="AccRuvia - Professional accounting and recruitment services"
-              className="w-full h-auto background-color-transparent rounded-2xl shadow-xl"
+              className="w-full h-auto rounded-2xl shadow-xl  "
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             />
             <motion.div
-              className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-xl"
+              className="absolute -top-4 -right-4 w-24 h-24 bg-primary rounded-full blur-xl"
               animate={{
                 scale: [1, 1.3, 0.8, 1.2, 1],
                 opacity: [0.3, 0.7, 0.2, 0.6, 0.3],

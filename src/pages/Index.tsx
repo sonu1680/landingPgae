@@ -6,9 +6,7 @@ import AboutSection from "@/components/AboutSection";
 import SoftwareSection from "@/components/SoftwareSection";
 import TeamSection from "@/components/TeamSection";
 import CallToActionSection from "@/components/CallToActionSection";
-import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-
 
 const Index = () => {
   const sectionVariants = {
@@ -43,7 +41,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 ">
-      
       <main>
         <motion.section
           id="top"
@@ -120,6 +117,7 @@ const Index = () => {
         >
           <CallToActionSection />
         </motion.section>
+        
       </main>
 
       <motion.div
@@ -127,8 +125,7 @@ const Index = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-      >
-      </motion.div>
+      ></motion.div>
     </div>
   );
 };

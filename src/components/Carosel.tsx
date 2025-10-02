@@ -3,46 +3,37 @@ import logo from "../assets/logo2.png"; //
 import { Clock, Users, Shield, Lock, Package, Brain } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 
-export const carouselImages = [
-  { id: 0, src: logo, title: "Realistic" },
-  { id: 1, src: logo, title: "Painting" },
-  { id: 2, src: logo, title: "Drawing" },
-  { id: 3, src: logo, title: "Animated" },
-];
+
 
 
   const features = [
-    {id:0,
+    {
+      id: 0,
       icon: Clock,
-      title: "Immediately Available",
+      title: "Clear Finances",
       description:
-        "Our team is ready to assist you at a moment's notice, ensuring your accounting needs are met promptly and efficiently.",
+        "Accurate books, timely reporting, and complete financial clarity at every step.",
     },
-    {id:1,
+    {
+      id: 1,
       icon: Users,
-      title: "Managed Accountants",
+      title: "Steady Operations",
       description:
-        "We provide managed accountants who are supervised by senior professionals, guaranteeing expert oversight.",
+        "Reliable systems and support that keep your business running without disruption.",
     },
-    {id:2,
+    {
+      id: 2,
       icon: Shield,
-      title: "Turnover Protected",
+      title: "More Time for Growth",
       description:
-        "We ensure continuity and stability in your accounting services to protect you from disruption.",
-    },
-    {id:3,
-      icon: Lock,
-      title: "Software & Security",
-      description:
-        "We utilise advanced accounting software and robust security measures to keep your financial data safe.",
+        "We handle the back-end work so you can focus on strategy, expansion, and opportunities.",
     }
-    
   ];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
 
-  const totalImages = carouselImages.length;
+  const totalImages = features.length;
   const prevIndex = (currentIndex - 1 + totalImages) % totalImages;
   const nextIndex = (currentIndex + 1) % totalImages;
 
@@ -69,17 +60,17 @@ const Carousel = () => {
 
   return (
     <div className="container relative w-full h-full overflow-hidden p-4   ">
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative w-full h-full flex items-center justify-center  ">
         {features.map((data) =>{ 
             const Icon = data.icon;
             return (
               <div
                 key={data.id}
-                className={`absolute transition-all duration-700 ease-in-out  shadow-md shadow-primary/40
+                className={`absolute transition-all duration-700  ease-in-out  shadow-md shadow-primary/40
               ${getTransformValue(data.id)} ${getZIndex(data.id)}
-              h-[84%] w-[40%] gap-x-20
+              h-[70%] w-[33%] gap-x-20
               ${data.id === currentIndex ? "shadow-sm " : "shadow-sm "}
-              rounded-xl overflow-hidden  `}
+              rounded-xl   `}
               >
                 <div className="w-full h-full  ">
                   <Card

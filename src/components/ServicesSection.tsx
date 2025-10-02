@@ -17,58 +17,9 @@ import {
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { services } from "@/const";
 
 const ServicesSection = () => {
-  const services = [
-    {
-      icon: Calculator,
-      title: "Accounting & Bookkeeping",
-      description:
-        "Stay focused on growth while we handle your accounting needs professionally and accurately.",
-      color: "bg-primary",
-      learnMore: true,
-    },
-    {
-      icon: Users,
-      title: "Payroll Services",
-      description:
-        "Stay focused on growth while we handle your payroll needs professionally and accurately.",
-      color: "bg-primary",
-      learnMore: true,
-    },
-    {
-      icon: FileText,
-      title: "Tax Services",
-      description:
-        "Stay focused on growth while we handle your tax preparation and filing needs professionally.",
-      color: "bg-primary",
-      learnMore: true,
-    },
-    {
-      icon: Headphones,
-      title: "Administrative Support",
-      description:
-        "Stay focused on growth while we handle your administrative tasks professionally and efficiently.",
-      color: "bg-primary",
-      learnMore: true,
-    },
-    {
-      icon: Search,
-      title: "Audit Support",
-      description:
-        "Stay focused on growth while we handle your audit support and compliance needs professionally.",
-      color: "bg-primary",
-      learnMore: true,
-    },
-    {
-      icon: UserCheck,
-      title: "Outsourcing Services",
-      description:
-        "Stay focused on growth while we handle your outsourcing and business process needs professionally.",
-      color: "bg-primary",
-      learnMore: true,
-    },
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -80,7 +31,6 @@ const ServicesSection = () => {
       },
     },
   };
-  const [expanded, setExpanded] = useState<number | null>(null);
 
   const getCardVariants = (index: number) => ({
     hidden: {
@@ -252,9 +202,8 @@ const navigate=useNavigate()
                       >
                         <Button
                           className="w-full py-6 bg-cyan flex justify-start items-center font-bold text-decoration-none underline-none lg:text-xl border border-transparent group-hover:border-white group-hover:bg-white/40 text-start transition-all duration-500 text-white relative overflow-hidden"
-                          onClick={() => navigate("/services")}
+                          onClick={() => navigate("/services",{state:{"service": JSON.stringify(service.moreData)}})}
                         >
-                          {/* Button background animation */}
                           <motion.div
                             className="absolute inset-0 bg-white/10"
                             initial={{ x: "-100%" }}

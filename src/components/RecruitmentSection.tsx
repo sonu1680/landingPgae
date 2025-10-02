@@ -7,43 +7,18 @@ import {
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import recruitmentIllustration from "@/assets/recruitment-illustration.jpg";
+import { RECRUITMENT } from "@/const";
+import { useNavigate } from "react-router-dom";
 
 const RecruitmentSection = () => {
-  const recruitmentServices = [
-    {
-      icon: FileUser,
-      title: "EOR - Employee on Record",
-      description:
-        "Stay focused on growth while we handle your accounting & recruitment needs with dedication.",
-    },
-    {
-      icon: UserPlus,
-      title: "Permanent Hiring (FTE)",
-      description:
-        "Stay focused on growth while we handle your permanent hiring and recruitment needs with dedication.",
-    },
-    {
-      icon: Briefcase,
-      title: "Contract Staffing",
-      description:
-        "Stay focused on growth while we handle your contract staffing and recruitment needs with dedication.",
-    },
-    {
-      icon: Crown,
-      title: "Executive Search (C2Os)",
-      description:
-        "Stay focused on growth while we handle your executive search and C-level recruitment needs with dedication.",
-    },
-  ];
+const navigate=useNavigate()
 
   return (
     <section className=" py-6 lg:py-10 bg-gradient-to-br from-orange-50 via-white to-orange-100 relative overflow-hidden">
-      {/* Accent circles */}
       <div className="absolute top-10 left-10 w-32 h-32 bg-orange-200/40 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 right-10 w-40 h-40 bg-orange-300/30 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Heading */}
         <motion.div
           className="text-center lg:text-left mb-8 lg:mb-16"
           initial={{ opacity: 0, y: -20 }}
@@ -58,9 +33,8 @@ const RecruitmentSection = () => {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-12 items-stretch">
-          {/* Service Cards */}
           <div className="flex flex-col justify-between space-y-6 flex-1">
-            {recruitmentServices.map((service, index) => {
+            {RECRUITMENT.map((service, index) => {
               const Icon = service.icon;
               return (
                 <motion.div
@@ -70,7 +44,14 @@ const RecruitmentSection = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                 >
-                  <Card className="group relative overflow-hidden border border-orange-100 bg-white/80 backdrop-blur-md shadow-md rounded-2xl hover:shadow-xl transition-all duration-500 cursor-pointer">
+                  <Card
+                    className="group relative overflow-hidden border border-orange-100 bg-white/80 backdrop-blur-md shadow-md rounded-2xl hover:shadow-xl transition-all duration-500 cursor-pointer"
+                    onClick={() =>
+                      navigate("/services", {
+                        state: { service: JSON.stringify(service.moreData) },
+                      })
+                    }
+                  >
                     <CardContent className="flex items-center gap-6 p-6">
                       <div className="w-16 h-16 flex items-center justify-center rounded-xl  bg-primary text-white shadow-lg group-hover:scale-110 transition-transform duration-300 px-4">
                         <Icon className="w-8 h-8" />
@@ -81,6 +62,9 @@ const RecruitmentSection = () => {
                         </CardTitle>
                         <CardDescription className="text-gray-600 leading-relaxed group-hover:text-gray-700">
                           {service.description}
+                          <span className="block mt-3 text-primary font-medium cursor-pointer hover:underline">
+                            Learn More →
+                          </span>{" "}
                         </CardDescription>
                       </div>
                     </CardContent>
@@ -91,7 +75,6 @@ const RecruitmentSection = () => {
             })}
           </div>
 
-          {/* Image Section */}
           <motion.div
             className="relative h-full flex-1"
             initial={{ opacity: 0, scale: 0.95 }}
@@ -105,7 +88,6 @@ const RecruitmentSection = () => {
                 alt="Professional recruitment services illustration"
                 className="w-full h-full object-cover rounded-2xl"
               />
-              {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5 rounded-2xl"></div>
             </div>
           </motion.div>
