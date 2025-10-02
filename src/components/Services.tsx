@@ -11,7 +11,20 @@ import {
   Briefcase,
   ClipboardList,
   UserCog,
-} from "lucide-react";import heroImage from "@/assets/accountant-hero.png";
+} from "lucide-react";
+const iconMap = {
+  Calculator,
+  Users,
+  FileText,
+  Headphones,
+  Search,
+  UserCheck,
+  Globe,
+  Briefcase,
+  ClipboardList,
+  UserCog,
+};
+import heroImage from "@/assets/accountant-hero.png";
 
 import Carousel from "./Carosel";
 import ContactForm from "./ContactForm";
@@ -65,7 +78,7 @@ const ServicesGrid = ({ services }: { services: Offering[] }) => {
       <div className="container mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const Icon = Calculator ;
+            const Icon = iconMap[service.icon]  ;
             return (
               <motion.div
                 key={index}
@@ -99,6 +112,7 @@ const ServicesGrid = ({ services }: { services: Offering[] }) => {
 const ServicePage = () => {
   const location = useLocation();
   const serviceData: MoreData = JSON.parse(location.state.service);
+  console.log(location.state.service);
   return (
     <div className="bg-gradient-to-br from-orange-50 via-white to-orange-100">
       <HeroSection

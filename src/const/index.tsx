@@ -37,7 +37,7 @@ export interface Service {
 
 
 
-export const services = [
+export const SERVICES = [
   {
     title: "Accounting and Bookkeeping Services",
     description:
@@ -54,48 +54,48 @@ export const services = [
 
       offerings: [
         {
-          icon: Calculator,
+          icon: "UserCheck",
 
           service: "Regular Transaction Recording",
           what_it_covers:
             "Daily, weekly, or monthly entries to keep your books accurate.",
         },
         {
-          icon: Calculator,
+          icon: "UserCheck",
 
           service: "Invoice Preparation and Entry",
           what_it_covers:
             "Make and log invoices to track payments and reports.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Accounts Receivable (AR)",
           what_it_covers:
             "Track customer payments and ensure timely receipt of funds.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Accounts Payable (AP)",
           what_it_covers: "Record supplier dues and ensure timely payments.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Bank Reconciliation Statement (BRS)",
           what_it_covers:
             "Match records with bank statements to catch errors and prevent fraud.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Quarterly and Annual Reporting",
           what_it_covers:
             "Prepare financial reports quarterly and annually to stay on track and comply with regulations.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Budgeting and Forecasting Help",
           what_it_covers:
@@ -120,33 +120,33 @@ export const services = [
 
       offerings: [
         {
-          icon: Calculator,
+          icon: "User",
 
           service: "Salary Processing",
           what_it_covers:
             "Calculate wages, bonuses, and comdescriptions with all deductions.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Tax Compliance",
           what_it_covers: "Handle payroll taxes for US and Australian clients.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Employee Support",
           what_it_covers: "Provide payslips and resolve payroll queries.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Software Integration",
           what_it_covers:
             "Connect with your HR, accounting, and time-tracking tools.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Direct Deposit",
           what_it_covers:
@@ -170,34 +170,34 @@ export const services = [
         "We help you stay audit-ready with verified data and clear reports—so nothing catches you off guard. Our audit support services include internal audit setup and financial audit preparation to keep everything in check.",
       offerings: [
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Financial Data Verification",
           what_it_covers:
             "Review and confirm the accuracy of financial records.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Internal Audit Setup",
           what_it_covers:
             "Set up clear steps and tools to make internal audits easy and organized.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Audit Planning & Execution",
           what_it_covers: "Plan and run audits with clear steps and deadlines.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Report Preparation",
           what_it_covers:
             "Draft audit reports with findings and recommendations.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Query Resolution",
           what_it_covers:
@@ -222,32 +222,32 @@ export const services = [
 
       offerings: [
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Tax Calculation",
           what_it_covers: "Figure out how much tax you owe.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Tax Filing",
           what_it_covers: "Prepare and submit your tax returns on time.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Regulatory Compliance",
           what_it_covers:
             "Follow the tax rules so you stay compliant and avoid trouble.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Advisory & Guidance",
           what_it_covers: "Help you plan smart and save where possible.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Documentation Support",
           what_it_covers: "Keep your tax documents organized and ready.",
@@ -270,31 +270,31 @@ export const services = [
         "From scheduling to filing, we handle your daily tasks quietly—so your work flows without interruptions. Our outsourced admin support includes everything from reports to reconciliation, plus access to a virtual assistant for finance.",
       offerings: [
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Meeting Scheduling",
           what_it_covers: "Book meetings and write minutes.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Report Drafting",
           what_it_covers: "Create simple internal reports.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Filing System Management",
           what_it_covers: "Keep your records organized.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Expense Reconciliation",
           what_it_covers: "Match expenses with reports.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Client & Staff Liaison",
           what_it_covers: "Talk to clients and senior staff on your behalf.",
@@ -316,30 +316,30 @@ export const services = [
         "From scheduling to filing, we handle your daily tasks quietly—so your work flows without interruptions. Our outsourced admin support includes everything from reports to reconciliation, plus access to a virtual assistant for finance.",
       offerings: [
         {
-          icon: Calculator,
+          icon: "Calculator",
           service: "Meeting Scheduling",
           what_it_covers: "Book meetings and write minutes.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Report Drafting",
           what_it_covers: "Create simple internal reports.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Filing System Management",
           what_it_covers: "Keep your records organized.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Expense Reconciliation",
           what_it_covers: "Match expenses with reports.",
         },
         {
-          icon: Calculator,
+          icon: "Calculator",
 
           service: "Client & Staff Liaison",
           what_it_covers: "Talk to clients and senior staff on your behalf.",

@@ -15,9 +15,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { services } from "@/const";
+import { SERVICES } from "@/const";
 
 const ServicesSection = () => {
 
@@ -60,6 +59,8 @@ const ServicesSection = () => {
       },
     },
   };
+
+  
 const navigate=useNavigate()
   return (
     <section id="services" className="py-10 lg:py-20  ">
@@ -94,7 +95,7 @@ const navigate=useNavigate()
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {services.map((service, index) => {
+          {SERVICES.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.div
@@ -200,7 +201,13 @@ const navigate=useNavigate()
                       >
                         <Button
                           className="w-full py-6 bg-cyan flex justify-start items-center font-bold text-decoration-none underline-none lg:text-xl border border-transparent group-hover:border-white group-hover:bg-white/40 text-start transition-all duration-500 text-white relative overflow-hidden"
-                          onClick={() => navigate("/services",{state:{"service": JSON.stringify(service.moreData)}})}
+                          onClick={() =>
+                            navigate("/services", {
+                              state: {
+                                service: JSON.stringify(service.moreData),
+                              },
+                            })
+                          }
                         >
                           <motion.div
                             className="absolute inset-0 bg-white/10"
@@ -211,7 +218,7 @@ const navigate=useNavigate()
                             }}
                           />
                           <span className="relative z-10">
-                             Learn More {">>>"}
+                            Learn More {">>>"}
                           </span>
                         </Button>
                       </motion.div>

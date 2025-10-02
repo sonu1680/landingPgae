@@ -188,7 +188,7 @@ const navigate=useNavigate()
             <motion.img
               src={heroIllustration}
               alt="AccRuvia - Professional accounting and recruitment services"
-              className="w-full h-auto rounded-2xl shadow-xl  "
+              className="w-full h-auto rounded-2xl  "
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             />

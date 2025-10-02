@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import recruitmentIllustration from "@/assets/recruitment-illustration.jpg";
+import recruitmentIllustration from "@/assets/2.svg";
 import { RECRUITMENT } from "@/const";
 import { useNavigate } from "react-router-dom";
 
@@ -82,13 +82,12 @@ const navigate=useNavigate()
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
+            <div className="relative overflow-hidden rounded-2xl">
               <img
                 src={recruitmentIllustration}
                 alt="Professional recruitment services illustration"
-                className="w-full h-full object-cover rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl bg-transparent "
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5 rounded-2xl"></div>
             </div>
           </motion.div>
         </div>
