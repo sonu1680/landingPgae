@@ -115,7 +115,6 @@ const navigate=useNavigate()
                 style={{ perspective: "1000px" }}
               >
                 <Card className="group transition-all duration-500 border-0 shadow-md hover:bg-primary hover:shadow-2xl h-full overflow-hidden relative">
-                  {/* Animated background gradient */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-[#9e2f0d]/5 to-transparent opacity-0 group-hover:opacity-100"
                     transition={{ duration: 0.3 }}
@@ -135,7 +134,6 @@ const navigate=useNavigate()
                         },
                       }}
                     >
-                      {/* Icon background animation */}
                       <motion.div
                         className="absolute inset-0 bg-white/20 rounded-2xl"
                         initial={{ scale: 0, opacity: 0 }}
