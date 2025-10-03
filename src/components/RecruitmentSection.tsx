@@ -1,4 +1,3 @@
-import { FileUser, UserPlus, Briefcase, Crown } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -6,10 +5,67 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import recruitmentIllustration from "@/assets/2.svg";
+import recruitmentIllustration from "@/assets/3.svg";
 import { RECRUITMENT } from "@/const";
 import { useNavigate } from "react-router-dom";
-
+import {
+  Calculator,
+  Users,
+  FileText,
+  Headphones,
+  Search,
+  UserCheck,
+  Globe,
+  Briefcase,
+  ClipboardList,
+  UserCog,
+  Landmark,
+  SquareLibrary,
+  DollarSign,
+  Receipt,
+  FileCheck,
+  Building,
+  Folder,
+  Calendar,
+  MessageSquare,
+  FileBarChart,
+  Settings,
+  Heart,
+  ShieldCheck,
+  UserPlus,
+  Cpu,
+  Factory,
+  Brain,
+} from "lucide-react";
+const iconMap = {
+  Calculator,
+  Users,
+  FileText,
+  Headphones,
+  Search,
+  UserCheck,
+  Globe,
+  Briefcase,
+  ClipboardList,
+  UserCog,
+  Landmark,
+  SquareLibrary,
+  DollarSign,
+  Receipt,
+  FileCheck,
+  Building,
+  Folder,
+  Calendar,
+  MessageSquare,
+  FileBarChart,
+  Settings,
+  Heart,
+  ShieldCheck,
+  UserPlus,
+  Cpu,
+  Factory,
+  Brain,
+};
 const RecruitmentSection = () => {
 const navigate=useNavigate()
 
@@ -32,10 +88,11 @@ const navigate=useNavigate()
           </h2>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-12 items-stretch ">
           <div className="flex flex-col justify-between space-y-6 flex-1">
             {RECRUITMENT.map((service, index) => {
-              const Icon = service.icon;
+              //@ts-ignore
+              const Icon = iconMap[service.icon];
               return (
                 <motion.div
                   key={index}
@@ -76,17 +133,19 @@ const navigate=useNavigate()
           </div>
 
           <motion.div
-            className="relative h-full flex-1"
+            className="relative h-full flex-1  "
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
+            <div className="relative overflow-hidden  ">
+              <motion.img
                 src={recruitmentIllustration}
-                alt="Professional recruitment services illustration"
-                className="w-full h-full object-cover rounded-2xl bg-transparent "
+                alt="AccRuvia - Professional accounting and recruitment services"
+                className="w-full h-auto rounded-2xl  "
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               />
             </div>
           </motion.div>

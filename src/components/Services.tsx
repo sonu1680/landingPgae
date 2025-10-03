@@ -6,11 +6,27 @@ import {
   Headphones,
   Search,
   UserCheck,
-  LucideIcon,
   Globe,
   Briefcase,
   ClipboardList,
   UserCog,
+  Landmark,
+  SquareLibrary,
+  DollarSign,
+  Receipt,
+  FileCheck,
+  Building,
+  Folder,
+  Calendar,
+  MessageSquare,
+  FileBarChart,
+  Settings,
+  Heart,
+  ShieldCheck,
+  UserPlus,
+  Cpu,
+  Factory,
+  Brain,
 } from "lucide-react";
 const iconMap = {
   Calculator,
@@ -23,6 +39,23 @@ const iconMap = {
   Briefcase,
   ClipboardList,
   UserCog,
+  Landmark,
+  SquareLibrary,
+  DollarSign,
+  Receipt,
+  FileCheck,
+  Building,
+  Folder,
+  Calendar,
+  MessageSquare,
+  FileBarChart,
+  Settings,
+  Heart,
+  ShieldCheck,
+  UserPlus,
+  Cpu,
+  Factory,
+  Brain,
 };
 import heroImage from "@/assets/accountant-hero.png";
 
@@ -78,6 +111,7 @@ const ServicesGrid = ({ services }: { services: Offering[] }) => {
       <div className="container mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
+            //@ts-ignore
             const Icon = iconMap[service.icon]  ;
             return (
               <motion.div

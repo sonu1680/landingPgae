@@ -1,34 +1,32 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/logo2.png"; //
-import { Clock, Users, Shield, Lock, Package, Brain } from "lucide-react";
+import { Clock, Users,  Calculator } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
 
 
 
-
-  const features = [
-    {
-      id: 0,
-      icon: Clock,
-      title: "Clear Finances",
-      description:
-        "Accurate books, timely reporting, and complete financial clarity at every step.",
-    },
-    {
-      id: 1,
-      icon: Users,
-      title: "Steady Operations",
-      description:
-        "Reliable systems and support that keep your business running without disruption.",
-    },
-    {
-      id: 2,
-      icon: Shield,
-      title: "More Time for Growth",
-      description:
-        "We handle the back-end work so you can focus on strategy, expansion, and opportunities.",
-    }
-  ];
+const features = [
+  {
+    id: 0,
+    icon: Calculator,
+    title: "Clear Finances",
+    description:
+      "Accurate books, timely reporting, and complete financial clarity at every step.",
+  },
+  {
+    id: 1,
+    icon: Users,
+    title: "Steady Operations",
+    description:
+      "Reliable systems and support that keep your business running without disruption.",
+  },
+  {
+    id: 2,
+    icon: Clock,
+    title: "More Time for Growth",
+    description:
+      "We handle the back-end work so you can focus on strategy, expansion, and opportunities.",
+  },
+];
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(1);

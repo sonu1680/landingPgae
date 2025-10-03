@@ -1,11 +1,4 @@
-import {
-  Calculator,
-  Users,
-  FileText,
-  Headphones,
-  Search,
-  UserCheck,
-} from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -17,7 +10,64 @@ import {
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { SERVICES } from "@/const";
-
+import {
+  Calculator,
+  Users,
+  FileText,
+  Headphones,
+  Search,
+  UserCheck,
+  Globe,
+  Briefcase,
+  ClipboardList,
+  UserCog,
+  Landmark,
+  SquareLibrary,
+  DollarSign,
+  Receipt,
+  FileCheck,
+  Building,
+  Folder,
+  Calendar,
+  MessageSquare,
+  FileBarChart,
+  Settings,
+  Heart,
+  ShieldCheck,
+  UserPlus,
+  Cpu,
+  Factory,
+  Brain,
+} from "lucide-react";
+const iconMap = {
+  Calculator,
+  Users,
+  FileText,
+  Headphones,
+  Search,
+  UserCheck,
+  Globe,
+  Briefcase,
+  ClipboardList,
+  UserCog,
+  Landmark,
+  SquareLibrary,
+  DollarSign,
+  Receipt,
+  FileCheck,
+  Building,
+  Folder,
+  Calendar,
+  MessageSquare,
+  FileBarChart,
+  Settings,
+  Heart,
+  ShieldCheck,
+  UserPlus,
+  Cpu,
+  Factory,
+  Brain,
+};
 const ServicesSection = () => {
 
   const containerVariants = {
@@ -96,7 +146,8 @@ const navigate=useNavigate()
           viewport={{ once: true, amount: 0.2 }}
         >
           {SERVICES.map((service, index) => {
-            const Icon = service.icon;
+            //@ts-ignore
+            const Icon = iconMap[service.icon];
             return (
               <motion.div
                 key={index}
