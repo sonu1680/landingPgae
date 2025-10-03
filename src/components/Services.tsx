@@ -57,7 +57,7 @@ const iconMap = {
   Factory,
   Brain,
 };
-import heroImage from "@/assets/accountant-hero.png";
+import heroImage from "@/assets/1.svg";
 
 import Carousel from "./Carosel";
 import ContactForm from "./ContactForm";
@@ -96,7 +96,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) => {
             <img
               src={heroImage}
               alt="Professional accountant working with documents and calculator"
-              className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-lg shadow-lg"
+              className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-lg "
             />
           </div>
         </div>

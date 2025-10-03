@@ -88,7 +88,7 @@ const navigate=useNavigate()
           </h2>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-stretch ">
+        <div className="flex flex-col lg:flex-row gap-12 items-stretch  ">
           <div className="flex flex-col justify-between space-y-6 flex-1">
             {RECRUITMENT.map((service, index) => {
               //@ts-ignore
@@ -133,7 +133,7 @@ const navigate=useNavigate()
           </div>
 
           <motion.div
-            className="relative h-full flex-1  "
+            className="relative h-full flex-1   "
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -143,7 +143,7 @@ const navigate=useNavigate()
               <motion.img
                 src={recruitmentIllustration}
                 alt="AccRuvia - Professional accounting and recruitment services"
-                className="w-full h-auto rounded-2xl  "
+                className="w-full h-full rounded-2xl  "
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />

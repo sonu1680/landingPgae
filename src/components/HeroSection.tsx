@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
-import heroIllustration from "@/assets/image.svg";
+import heroIllustration from "@/assets/1.svg";
 import { motion } from "framer-motion";
-import { BackgroundLines } from "./ui/background-lines";
-import { GridBackgroundDemo } from "./GridBackground";
 import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {

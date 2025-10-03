@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import aboutIllustration from "@/assets/about-illustration.jpg";
+import aboutIllustration from "@/assets/2.svg";
 
 const AboutSection = () => {
   const contentRef = useRef<HTMLDivElement>(null);
