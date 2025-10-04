@@ -74,9 +74,9 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image }) => {
   return (
-    <section className="bg-hero-bg pt-12 md:pt-16 lg:pt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <section className="bg-hero-bg pt-4 ">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:-mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ">
           <div className="space-y-6 md:space-y-8 lg:space-y-10 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
               {title}
@@ -98,7 +98,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image }) =
             <img
               src={image}
               alt="Professional accountant working with documents and calculator"
-              className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-lg "
+              className="w-full h-full rounded-lg "
             />
           </div>
         </div>
@@ -109,7 +109,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image }) =
 
 const ServicesGrid = ({ services }: { services: Offering[] }) => {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-br from-orange-50 via-white to-orange-100">
+    <section className="py-16 lg:py-2 bg-gradient-to-br from-orange-50 via-white to-orange-100">
       <div className="container mx-auto px-4">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {

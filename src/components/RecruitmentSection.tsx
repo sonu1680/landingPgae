@@ -5,7 +5,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import recruitmentIllustration from "@/assets/ExecutiveSearch.png";
+import recruitmentIllustration from "@/assets/pic.png";
 import { RECRUITMENT } from "@/const";
 import { useNavigate } from "react-router-dom";
 import {
