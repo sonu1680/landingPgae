@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroIllustration from "@/assets/1.svg";
+import heroIllustration from "@/assets/hero.png";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
