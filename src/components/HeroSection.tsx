@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import heroIllustration from "@/assets/hero.png";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -82,6 +83,7 @@ const HeroSection = () => {
     },
   };
 const navigate=useNavigate()
+
   return (
     <section className=" py-20 ">
       <div className="container mx-auto px-4">

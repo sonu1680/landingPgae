@@ -5,7 +5,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import recruitmentIllustration from "@/assets/3.svg";
+import recruitmentIllustration from "@/assets/ExecutiveSearch.png";
 import { RECRUITMENT } from "@/const";
 import { useNavigate } from "react-router-dom";
 import {
@@ -139,11 +139,11 @@ const navigate=useNavigate()
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative overflow-hidden p-10 ">
+            <div className="relative overflow-hidden ">
               <motion.img
                 src={recruitmentIllustration}
                 alt="AccRuvia - Professional accounting and recruitment services"
-                className="w-full h-full rounded-2xl    "
+                className="w-full h-full rounded-2xl  scale-110  "
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />

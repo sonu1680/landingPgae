@@ -2,17 +2,17 @@ import {
 
   LucideIcon,
 } from "lucide-react";
-import Accounting_and_Bookkeeping_Services from "@/assets/Accounting_and_Bookkeeping_Services.svg";
-import Administrative_Support from "@/assets/Administrative_Support.svg";
-import AuditSupport from "@/assets/AuditSupport.svg";
-export { default as contactus } from "@/assets/contactus.svg";
-import ContractStaffing from "@/assets/ContractStaffing.svg";
-import EmployeeonRecord from "@/assets/EmployeeonRecord.svg";
-import ExecutiveSearch from "@/assets/ExecutiveSearch.svg";
-import OutsourcingServices from "@/assets/OutsourcingServices.svg";
-import PayrollServices from "@/assets/PayrollServices.svg";
-import PermanentHiring from "@/assets/PermanentHiring.svg";
-import TaxServices from "@/assets/TaxServices.svg";
+import Accounting_and_Bookkeeping_Services from "@/assets/AccountingandBokkeepingServices.png";
+import Administrative_Support from "@/assets/AdministrativeSupport.png";
+import AuditSupport from "@/assets/AuditSupport.png";
+export { default as contactus } from "@/assets/contactus.png";
+import ContractStaffing from "@/assets/ContractStaffing.png";
+import EmployeeonRecord from "@/assets/EmployeeonRecord.png";
+import ExecutiveSearch from "@/assets/ExecutiveSearch.png";
+import OutsourcingServices from "@/assets/OutsourcingServices.png";
+import PayrollServices from "@/assets/PayrollServices.png";
+import PermanentHiring from "@/assets/PermanentHiring.png";
+import TaxServices from "@/assets/TaxServices.png";
 import one from "@/assets/1.svg";
 import two from "@/assets/2.svg";
 import three from "@/assets/3.svg";
@@ -282,7 +282,7 @@ export const SERVICES = [
       "Stay focused on growth while we handle your outsourcing and business process needs professionally.",
     icon: "Briefcase",
     color: "bg-primary",
-    learnMore: false,
+    learnMore: true,
     moreData: {
       title: "Outsourcing Services",
       image: OutsourcingServices,

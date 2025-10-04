@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import aboutIllustration from "@/assets/2.svg";
+import aboutIllustration from "@/assets/2.png";
 
 const AboutSection = () => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -35,11 +35,11 @@ const AboutSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <div className="relative overflow-hidden rounded-2xl  w-full h-full   ">
+            <div className="relative overflow-hidden rounded-2xl  w-full h-full  ">
               <img
                 src={aboutIllustration}
                 alt="About AccRuvia - Professional team collaboration"
-                className="w-full h-full object-cover object-center rounded-2xl shadow-xl shadow-green-900 "
+                className="w-full h-full object-cover object-center rounded-2xl scale-125 "
               />
             </div>
           </motion.div>
