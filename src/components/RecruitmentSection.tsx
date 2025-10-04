@@ -139,11 +139,11 @@ const navigate=useNavigate()
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <div className="relative overflow-hidden  ">
+            <div className="relative overflow-hidden p-10 ">
               <motion.img
                 src={recruitmentIllustration}
                 alt="AccRuvia - Professional accounting and recruitment services"
-                className="w-full h-full rounded-2xl  "
+                className="w-full h-full rounded-2xl    "
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               />

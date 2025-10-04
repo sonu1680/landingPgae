@@ -1,33 +1,21 @@
 import {
-  Calculator,
-  Users,
-  FileText,
-  Headphones,
-  Search,
-  UserCheck,
-  Globe,
-  Briefcase,
-  ClipboardList,
-  UserCog,
-  Landmark,
-  SquareLibrary,
-  DollarSign,
-  Receipt,
-  FileCheck,
-  Building,
-  Folder,
-  Calendar,
-  MessageSquare,
-  FileBarChart,
-  Settings,
-  Heart,
-  ShieldCheck,
-  UserPlus,
-  Cpu,
-  Factory,
-  Brain,
+
   LucideIcon,
 } from "lucide-react";
+import Accounting_and_Bookkeeping_Services from "@/assets/Accounting_and_Bookkeeping_Services.svg";
+import Administrative_Support from "@/assets/Administrative_Support.svg";
+import AuditSupport from "@/assets/AuditSupport.svg";
+export { default as contactus } from "@/assets/contactus.svg";
+import ContractStaffing from "@/assets/ContractStaffing.svg";
+import EmployeeonRecord from "@/assets/EmployeeonRecord.svg";
+import ExecutiveSearch from "@/assets/ExecutiveSearch.svg";
+import OutsourcingServices from "@/assets/OutsourcingServices.svg";
+import PayrollServices from "@/assets/PayrollServices.svg";
+import PermanentHiring from "@/assets/PermanentHiring.svg";
+import TaxServices from "@/assets/TaxServices.svg";
+import one from "@/assets/1.svg";
+import two from "@/assets/2.svg";
+import three from "@/assets/3.svg";
 
 export interface Offering {
   service: string;
@@ -38,6 +26,7 @@ export interface Offering {
 export interface MoreData {
   title: string;
   description: string;
+  image:string;
   offerings: Offering[];
 }
 
@@ -63,6 +52,7 @@ export const SERVICES = [
       description:
         "We help you stay organized and compliant. So when audits come, you are already prepared. This is where our outsourced accounting services and bookkeeping for businesses make a real difference.",
       icon: "Calculator",
+      image: Accounting_and_Bookkeeping_Services,
       offerings: [
         {
           icon: "FileText",
@@ -118,6 +108,8 @@ export const SERVICES = [
     moreData: {
       title: "Payroll Services",
       icon: "Calculator",
+      image: PayrollServices,
+
       description:
         "We manage your payroll so your team gets paid right—on time, every time. We’re your trusted payroll processing company, offering full payroll tax compliance and HR and payroll integration.",
       offerings: [
@@ -162,6 +154,8 @@ export const SERVICES = [
     moreData: {
       title: "Audit Support",
       icon: "Calculator",
+      image: AuditSupport,
+
       description:
         "We help you stay audit-ready with verified data and clear reports—so nothing catches you off guard. Our audit support services include internal audit setup and financial audit preparation to keep everything in check.",
       offerings: [
@@ -207,6 +201,7 @@ export const SERVICES = [
     moreData: {
       icon: "Calculator",
       title: "Tax Services",
+      image: TaxServices,
       description:
         "From tax filing support for businesses to smart planning, we keep you compliant and prepared.",
       offerings: [
@@ -249,6 +244,7 @@ export const SERVICES = [
     moreData: {
       icon: "Calculator",
       title: "Administrative Support",
+      image: Administrative_Support,
       description:
         "From scheduling to filing, we handle your daily tasks quietly—so your work flows without interruptions. Our outsourced admin support includes everything from reports to reconciliation, plus access to a virtual assistant for finance.",
       offerings: [
@@ -289,6 +285,7 @@ export const SERVICES = [
     learnMore: false,
     moreData: {
       title: "Outsourcing Services",
+      image: OutsourcingServices,
       description:
         "From back-office processes to admin and finance tasks, we handle your operations with efficiency and confidentiality so you can scale faster.",
       offerings: [
@@ -332,6 +329,7 @@ export const RECRUITMENT = [
     moreData: {
       icon: "Users",
       title: "EOR – Employee on Record",
+      image: EmployeeonRecord,
       description:
         "Hiring in India should not be complicated and slow you down. With our EOR services, you can onboard talent in new markets—without setting up a legal entity. We handle the legal side so you can focus on the work.",
 
@@ -385,6 +383,7 @@ export const RECRUITMENT = [
     moreData: {
       icon: "Briefcase",
       title: "Permanent Hiring (FTE)",
+      image: PermanentHiring,
       description:
         "Hiring full-time employees should not be a hassle. We keep it steady and smart. We help you find the right people for long-term roles—without delays or shortcuts. Our process works across industries and adjusts to what you need.",
 
@@ -420,6 +419,7 @@ export const RECRUITMENT = [
     moreData: {
       icon: "ClipboardList",
       title: "Contract Staffing",
+      image: ContractStaffing,
       description:
         "Sometimes you don’t need a full-time hire. You just need the right person for the job—right now. AccRuvia’s contract staffing lets you bring in skilled professionals on short-term contracts without long-term commitments. It’s a simple way to stay flexible, meet deadlines, and keep projects moving.",
 
@@ -455,6 +455,7 @@ export const RECRUITMENT = [
     moreData: {
       icon: "UserCog",
       title: "Executive Search (CXOs)",
+      image: ExecutiveSearch,
       description:
         "Hiring senior leaders does not mean just filling a role. It is about finding people who understand your description and share your values. They should know how to lead with purpose. We help you hire executives who fit your company and not just the job description.",
 
@@ -481,4 +482,5 @@ export const RECRUITMENT = [
     },
   },
 ];
+
 

@@ -35,11 +35,11 @@ const AboutSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <div className="relative overflow-hidden rounded-2xl  w-full h-full p-4 ">
+            <div className="relative overflow-hidden rounded-2xl  w-full h-full   ">
               <img
                 src={aboutIllustration}
                 alt="About AccRuvia - Professional team collaboration"
-                className="w-full h-full object-cover object-center rounded-2xl"
+                className="w-full h-full object-cover object-center rounded-2xl shadow-xl shadow-green-900 "
               />
             </div>
           </motion.div>

@@ -7,22 +7,19 @@ import {
   Twitter,
   Facebook,
   Instagram,
-  ChevronRight,
   Globe,
   Clock,
   Award,
   Users,
-  ArrowRight,
-  Send,
-  Check,
   Star,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png"
+import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
+import { Link } from "react-router-dom";
+import { RECRUITMENT, SERVICES } from "@/const";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,26 +32,56 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: "About Us", href: "#about", icon: Users },
-      { name: "Our Team", href: "#team", icon: Award },
-      { name: "Careers", href: "#careers", badge: "Hiring" },
-      { name: "Contact", href: "#contact", icon: Mail },
-      { name: "Blog", href: "#blog", badge: "New" },
+      { name: "About Us", href: "/#about", icon: Users },
+      { name: "Our Team", href: "/#team", icon: Award },
+      { name: "Careers", href: "/#services", badge: "Hiring" },
+      { name: "Contact", href: "/contact-us", icon: Mail },
     ],
     services: [
-      { name: "Accounting & Bookkeeping", href: "#" },
-      { name: "Payroll Services", href: "#" },
-      { name: "Tax Services", href: "#" },
-      { name: "Administrative Support", href: "#" },
-      { name: "Audit Support", href: "#" },
-      { name: "Outsourcing Services", href: "#" },
+      {
+        name: "Accounting & Bookkeeping",
+        href: "services",
+        data: SERVICES[0].moreData,
+      },
+      {
+        name: "Payroll Services",
+        href: "services",
+        data: SERVICES[1].moreData,
+      },
+      { name: "Tax Services", href: "services", data: SERVICES[3].moreData },
+      {
+        name: "Administrative Support",
+        href: "services",
+        data: SERVICES[4].moreData,
+      },
+      { name: "Audit Support", href: "services", data: SERVICES[2].moreData },
+      {
+        name: "Outsourcing Services",
+        href: "services",
+        data: SERVICES[5].moreData,
+      },
     ],
     hiring: [
-      { name: "EOR - Employee on Record", href: "#" },
-      { name: "Permanent Hiring", href: "#" },
-      { name: "Contract Staffing", href: "#" },
-      { name: "Executive Search (CXOs)", href: "#" },
-      { name: "Talent Acquisition", href: "#" },
+      {
+        name: "EOR - Employee on Record",
+        href: "services",
+        data: RECRUITMENT[0].moreData,
+      },
+      {
+        name: "Permanent Hiring",
+        href: "services",
+        data: RECRUITMENT[1].moreData,
+      },
+      {
+        name: "Contract Staffing",
+        href: "services",
+        data: RECRUITMENT[2].moreData,
+      },
+      {
+        name: "Executive Search (CXOs)",
+        href: "services",
+        data: RECRUITMENT[3].moreData,
+      },
     ],
     resources: [
       { name: "Privacy Policy", href: "#" },
@@ -101,7 +128,6 @@ const Footer = () => {
 
   return (
     <footer className="relative mt-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-      {/* Background pattern */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 opacity-20"
@@ -123,12 +149,9 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10  border-gray-700/50 bg-gray-800/30 backdrop-blur-sm">
-        {/* Main Footer */}
         <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8  border-gray-700/50 bg-gray-800/30 backdrop-blur-sm">
-          {/* Left block */}
           <div className="lg:col-span-2 space-y-6">
             <div className="text-3xl  font-bold bg-clip-text text-transparent  ">
-              
               <img src={logo} alt="" className="bg-white rounded-lg px-2" />
             </div>
             <p className="text-sm text-gray-400">
@@ -139,7 +162,6 @@ const Footer = () => {
               and recruitment solutions.
             </p>
 
-            {/* Newsletter */}
             <form onSubmit={handleSubscribe} className="space-y-3">
               <input
                 type="email"
@@ -157,31 +179,32 @@ const Footer = () => {
             </form>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-gray-400">
               {footerLinks.services.map((s, i) => (
                 <li key={i} className="hover:text-orange-400 cursor-pointer ">
-                  {s.name}
+                  <Link to={s.href} state={{ service: JSON.stringify(s.data) }}>
+                    {s.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Hiring */}
           <div>
             <h3 className="font-bold text-lg mb-4">Hiring Solutions</h3>
             <ul className="space-y-2 text-gray-400">
               {footerLinks.hiring.map((s, i) => (
                 <li key={i} className="hover:text-orange-400 cursor-pointer ">
-                  {s.name}
+                  <Link to={s.href} state={{ service: JSON.stringify(s.data) }}>
+                    {s.name}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company */}
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2 text-gray-400">
@@ -190,18 +213,19 @@ const Footer = () => {
                   key={i}
                   className="flex gap-2 items-center hover:text-orange-400 cursor-pointer "
                 >
-                  {c.name}
-                  {c.badge && (
-                    <span className="px-2 py-0.5 text-xs bg-orange-500/20 text-orange-400 rounded-full cursor-pointer ">
-                      {c.badge}
-                    </span>
-                  )}
+                  <a href={c.href}>
+                    {c.name}
+                    {c.badge && (
+                      <span className="px-2 py-0.5 text-xs bg-orange-500/20 text-orange-400 rounded-full cursor-pointer ">
+                        {c.badge}
+                      </span>
+                    )}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="font-bold text-lg mb-4">Get in Touch</h3>
             <ul className="space-y-3 text-sm text-gray-400">
@@ -212,9 +236,34 @@ const Footer = () => {
                 <Mail className="w-4 h-4 text-orange-400" /> accruvia@gmail.com
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
-                <MapPin className="w-4 h-4 text-orange-400" /> Services
-                Nationwide
+                <MapPin className="w-4 h-4 text-orange-400" /> Dubai
               </li>
+
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <Globe className="w-4 h-4 text-orange-400" />{" "}
+                <a
+                  href="https://www.accruvia.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  www.accruvia.com
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="font-bold text-lg mb-4">Get in Touch</h3>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <Phone className="w-4 h-4 text-orange-400" /> +91 9374437099
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <Mail className="w-4 h-4 text-orange-400" /> accruvia@gmail.com
+              </li>
+              <li className="flex items-center gap-3 cursor-pointer ">
+                <MapPin className="w-4 h-4 text-orange-400" /> India
+              </li>
+
               <li className="flex items-center gap-3 cursor-pointer ">
                 <Globe className="w-4 h-4 text-orange-400" />{" "}
                 <a
@@ -229,7 +278,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="border-t  border-gray-700/50 bg-gray-800/30 backdrop-blur-sm py-6 text-center text-gray-400 text-sm">
           © {new Date().getFullYear()} AccRuvia. All rights reserved.
         </div>

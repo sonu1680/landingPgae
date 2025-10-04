@@ -64,13 +64,16 @@ import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { MoreData, Offering } from "@/const";
+import { useEffect } from "react";
 
 interface HeroSectionProps {
   title: string;
   description: string;
+  image:string
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image }) => {
+  console.log(image)
   return (
     <section className="bg-hero-bg pt-12 md:pt-16 lg:pt-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +97,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description }) => {
 
           <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
             <img
-              src={heroImage}
+              src={image}
               alt="Professional accountant working with documents and calculator"
               className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto rounded-lg "
             />
@@ -146,12 +149,15 @@ const ServicesGrid = ({ services }: { services: Offering[] }) => {
 const ServicePage = () => {
   const location = useLocation();
   const serviceData: MoreData = JSON.parse(location.state.service);
-  console.log(location.state.service);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceData]);
   return (
     <div className="bg-gradient-to-br from-orange-50 via-white to-orange-100">
       <HeroSection
         title={serviceData.title}
         description={serviceData.description}
+        image={serviceData.image}
       />
       <ServicesGrid services={serviceData.offerings} />
 
